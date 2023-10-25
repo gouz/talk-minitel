@@ -1,8 +1,5 @@
 const url = `http://192.168.1.11`;
 
-const CM = new CanvasManager(document.querySelector("#minitel-canvas"));
-const CV = new ConvertVideotex();
-
 function sliceIntoChunks(arr, chunkSize) {
   const res = [];
   for (let i = 0; i < arr.length; i += chunkSize) {
@@ -11,6 +8,11 @@ function sliceIntoChunks(arr, chunkSize) {
   }
   return res;
 }
+
+setTimeout(() => {
+  const CM = new CanvasManager(document.querySelector("#minitel-canvas"));
+  const CV = new ConvertVideotex();
+}, 100);
 
 window.slideskMinitel = async (file) => {
   const img = document.createElement("img");
