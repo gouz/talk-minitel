@@ -1,0 +1,50 @@
+:root {
+  --sd-heading1-size: 8.5vw;
+  --sd-heading1-line-height: 1;
+  --sd-heading2-size: 5vw;
+  --sd-heading2-line-height: 1;
+  --sd-text-size: 2.2vw;
+  --sd-text-line-height: 1.2;
+
+  --sd-background-color: #242424;
+  --sd-heading-color: rgba(255, 255, 255, 0.97);
+  --sd-text-color: rgba(255, 255, 255, 0.87);
+  --sd-primary-color: rgb(37, 186, 146);
+
+  /* SpeakerView */
+  --sd-sv-timer-size: 80px;
+  --sd-sv-text-size: 40px;
+  --sd-sv-text-line-height: 1.2;
+  --sd-sv-background-color: #242424;
+  --sd-sv-text-color: rgba(255, 255, 255, 0.87);
+}
+
+@font-face {
+  font-family: "Minitel";
+  src: url("Minitel.ttf");
+}
+
+h1,
+H2 {
+  font-family: "Minitel";
+}
+
+.sd-slide {
+  background-image: url(annuaire.jpg);
+  background-size: cover;
+}
+
+.sd-slide::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(18, 18, 14, 0.7);
+  content: "";
+  z-index: -1;
+}
+
+.sd-slide.darker::after {
+  background-color: rgba(18, 18, 14, 0.9);
+}

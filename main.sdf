@@ -1,9 +1,33 @@
 /::
-custom_css: custom.css
+custom_css: assets/custom.css
 ::/
 
 # 3615 Twitch
 
-## My first Slide
+## 3615 MOI .[darker]
+
+**Sylvain "gouz" Gougouzian**
+
+Consultant Dev Senior
+
+!image(assets/zenika.svg | width="300px" alt="zenika")
+
+Clermont-Ferrand
+
+**https://gouz.dev**
 
 !minitel(assets/me.jpg)
+
+## Historique du minitel
+
+## Conception & Recherche
+
+## Videotex
+
+## Conversion image
+
+## Bot Twitch
+
+## Electronique
+
+## Conclusion
