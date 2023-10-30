@@ -10,7 +10,7 @@ custom_css: assets/custom.css
 
 Consultant Dev Senior
 
-!image(assets/zenika.svg | width="300px" alt="zenika")
+!image(assets/zenika.svg, zenika, 30)
 
 Clermont-Ferrand
 
