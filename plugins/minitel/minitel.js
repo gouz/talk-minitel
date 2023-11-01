@@ -9,12 +9,18 @@ function sliceIntoChunks(arr, chunkSize) {
   return res;
 }
 
-setTimeout(() => {
-  const CM = new CanvasManager(document.querySelector("#minitel-canvas"));
-  const CV = new ConvertVideotex();
-}, 100);
+const CM = new CanvasManager(document.querySelector("#minitel-canvas"));
+const CV = new ConvertVideotex();
 
-window.slideskMinitel = async (file) => {
+window.slidesk.checkSlide = () => {
+  const minitel =
+    window.slidesk.slides[window.slidesk.currentSlide].querySelector(
+      "img[data-minitel]"
+    );
+  if (minitel) window.slidesk.Minitel(minitel.getAttribute("data-minitel"));
+};
+
+window.slidesk.Minitel = async (file) => {
   const img = document.createElement("img");
   img.addEventListener(
     "load",

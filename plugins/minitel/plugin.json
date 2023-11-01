@@ -1,10 +1,10 @@
 {
   "addHTML": "<canvas width=\"80\" height=\"72\" id=\"minitel-canvas\"></canvas>",
-  "addScripts": [
+  "addScriptsAfter": [
     "./plugins/minitel/CanvasManager.js",
     "./plugins/minitel/ConvertVideotex.js",
     "./plugins/minitel/minitel.js"
   ],
   "addStyles": ["./plugins/minitel/minitel.css"],
-  "onSlideChange": "const minitel = window.slidesk.slides[window.slidesk.currentSlide].querySelector(\"[data-minitel]\"); if (minitel) window.slideskMinitel(minitel.getAttribute(\"data-minitel\"));"
+  "onSlideChange": "window.slidesk.checkSlide();"
 }

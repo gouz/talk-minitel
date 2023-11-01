@@ -1,5 +1,7 @@
 # 3615 Twitch, un bot Twitch sur Minitel ?
 
+## Abstract
+
 Streamant de temps en temps sur Twitch, je me suis demandé comment améliorer l'interaction avec les viewers.
 
 Passionné d'IoT et d'objets vintages, je me suis dit "Et si mes viewers affichaient leurs réactions sur le Minitel que j'avais en arrière-plan ?"

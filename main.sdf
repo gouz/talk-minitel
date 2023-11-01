@@ -4,30 +4,24 @@ custom_css: assets/custom.css
 
 # 3615 Twitch
 
-## 3615 MOI .[darker]
+!include(_introduction.sdf)
 
-**Sylvain "gouz" Gougouzian**
+!include(_history.sdf)
 
-Consultant Dev Senior
+/*
+include(_conception.sdf)
 
-!image(assets/zenika.svg, zenika, 30)
+include(_videotex.sdf)
 
-Clermont-Ferrand
+include(_conversion.sdf)
 
-**https://gouz.dev**
+include(_twitch.sdf)
 
-!minitel(assets/me.jpg)
+include(_electronic.sdf)
 
-## Historique du minitel
+include(_conclusion.sdf)
+*/
 
-## Conception & Recherche
+## 🫶 .[cover]
 
-## Videotex
-
-## Conversion image
-
-## Bot Twitch
-
-## Electronique
-
-## Conclusion
+des questions ?

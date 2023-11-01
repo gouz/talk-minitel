@@ -1,0 +1,128 @@
+## Conversion image
+
+/*
+Maintenant que la théorie est expliquée, nous allons passer au développement de cette conversion. J’ai choisi le langage Javascript pour faciliter la mutualisation du code entre le Bot, qui est développé sous NodeJS, et le serveur de démonstration, qui est une page web.
+
+Rappelons les étapes : 
+Parcours de l’image par pavé de 6 pixels ;
+Recherche des lumas faible et forte ;
+Création du motif ;
+Conversion des lumas en couleur Minitel ;
+Définition de la trame à envoyer.
+
+La trame à envoyer doit commencer par 2 octets :
+Caractère d’effacement de l’écran : 0x0c ;
+Caractère de passage en mode semi-graphique : 0x0e.
+
+La trame d’un pixel est composée d’une succession de 5 octets : 
+Caractère de séparation : 0x1b ;
+Couleur de Texte : 0x40 + la valeur de la couleur Minitel ;
+Caractère de séparation : 0x1b ;
+Couleur de Fond : 0x50 + la valeur de la couleur Minitel ;
+Motif sur 1 octet.
+
+Les couleurs Minitel sont les suivantes :
+Noir : 0
+Rouge : 1
+Vert : 2
+Jaune : 3
+Bleu : 4
+Magenta : 5
+Cyan : 6
+Blanc : 7
+
+Pour rappel, l’ordre des niveaux de gris est le suivant :
+Noir
+Bleu
+Rouge
+Magenta
+Vert
+Cyan
+Jaune
+Blanc
+
+Ce qui nous impose à créer un tableau pour mettre les valeurs dans l’ordre souhaité : 
+const colorLum = [0, 4, 1, 5, 2, 6, 3, 7];
+
+Nous avons donc 
+une fonction qui calcule la luminance d’un pixel : 
+ConvertVideotex.prototype.brightness = function (rgb) {
+  return Math.round(
+    (parseInt(rgb[0]) * 299 + parseInt(rgb[1]) * 587 + parseInt(rgb[2]) * 114) /
+      1000
+  );
+};
+
+une fonction qui nous donne les luminances faibles et fortes d’une portion d’image :
+ConvertVideotex.prototype.calcColors = function (x, y, pixels) {
+  const xPix = x * 2;
+  const yPix = y * 3;
+  let lum = this.brightness(pixels[xPix + yPix * 80]);
+  let color = [lum, lum];
+  for (let b = yPix; b <= yPix + 2; b++) {
+    for (let a = xPix; a <= xPix + 1; a++) {
+      lum = this.brightness(pixels[a + b * 80]);
+      if (lum < color[0]) color[0] = lum;
+      if (lum > color[1]) color[1] = lum;
+    }
+  }
+  return color;
+};
+
+une fonction qui détermine si un pixel doit avoir la couleur de fond ou la couleur du texte :
+ConvertVideotex.prototype.state = function (x, y, colors, pixels) {
+  const color = this.brightness(pixels[x + y * 80]);
+  return Math.abs(colors[0] - color) > Math.abs(colors[1] - color) ? 0 : 1;
+};
+
+Le calcul du motif est fait grâce à la méthode suivante :
+ConvertVideotex.prototype.calcChar = function (x, y, colors, pixels) {
+  const xPix = x * 2;
+  const yPix = y * 3;
+  let car = 0;
+  car += Math.pow(2, 0) * this.state(xPix + 0, yPix + 0, colors, pixels);
+  car += Math.pow(2, 1) * this.state(xPix + 1, yPix + 0, colors, pixels);
+  car += Math.pow(2, 2) * this.state(xPix + 0, yPix + 1, colors, pixels);
+  car += Math.pow(2, 3) * this.state(xPix + 1, yPix + 1, colors, pixels);
+  car += Math.pow(2, 4) * this.state(xPix + 0, yPix + 2, colors, pixels);
+  car += Math.pow(2, 5) * 1;
+  car += Math.pow(2, 6) * this.state(xPix + 1, yPix + 2, colors, pixels);
+  return car;
+};
+
+Cela nous amène à la fonction de conversion, qui prend en paramètre un tableau de pixels dit RGB (un tableau de 3 valeurs comprises entre 0 et 255 pour les composantes rouge, verte et bleue).
+
+ConvertVideotex.prototype.convert = function (pixels) {
+  let x = 0;
+  let y = 0;
+  const pixelsArray = [];
+  for (let i = 0; i < pixels.length; i += 4) {
+    pixelsArray.push([pixels[i], pixels[i + 1], pixels[i + 2]]);
+  }
+
+  const colorLum = [0, 4, 1, 5, 2, 6, 3, 7];
+  
+  const str = [];
+
+  let index = 0;
+
+  for (y = 0; y < 24; y++) {
+    for (x = 0; x < 40; x++) {
+      const colors = this.calcColors(x, y, pixelsArray);
+      str[index++] = 0x1b; // ESC char
+      str[index++] = colorLum[Math.floor(colors[0] / 32)] + 0x40; // 0x40 = Black (front)
+      str[index++] = 0x1b; // ESC char
+      str[index++] = colorLum[Math.floor(colors[1] / 32)] + 0x50; // 0x50 = Black (background)
+      str[index++] = this.calcChar(x, y, colors, pixelsArray);
+    }
+  }
+
+  const result = [0x0c, 0x0e]; // clear screen & semi graphic mode
+  for (let i = 0; i < index; i++) result.push(str[i]);
+
+  return result;
+};
+
+Nous avons donc notre outil de conversion “ConvertVideotex” qui nous permet de passer d’un tableau de pixels RGB en une trame à envoyer au Minitel.
+
+*/

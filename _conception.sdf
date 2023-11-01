@@ -1,0 +1,29 @@
+## Conception & Recherche
+
+/*
+Dans cet article, pour la partie Hardware, j’ai utilisé un ESP8266, mais le code est également fonctionnel avec un Arduino disposant d’un module WiFi.
+
+Le matériel nécessaire est : 
+un Minitel 1B (avec une prise DIN5)
+un ESP8266 (Nodemcu ESP8266 ESP-12F)
+une résistance de 4,7kΩ
+une résistance de 1kΩ
+des câbles
+optionnel mais recommandé : une breadboard
+
+Pour la partie logicielle, le principe est de développer un Bot Twitch qui va communiquer avec l'ESP8266 via le WiFi. Ainsi, il faudra développer un serveur web capable de comprendre les réponses GET et POST. 
+
+L'ESP8266 n'ayant pas énormément de mémoire, le traitement de l'image se fera au niveau du Bot.
+
+La résolution du Minitel est de 24 rangées de 40 caractères. Il est possible de passer en mode semi-graphique pour diviser chaque caractères en rectangles de 2 pixels horizontaux pour 3 pixels verticaux.  Nous obtenons donc une résolution de 80px de large sur 72px de haut. Le minitel est capable d’afficher 8 niveaux de gris, mais les rectangles de pixels ne peuvent avoir que 2 couleurs différentes, la couleur du "texte" et la couleur de fond.
+
+En résumé, pour afficher une image sur le Minitel, il faut :
+La redimensionner en 80px par 72px ;
+Découper cette nouvelle image en carreaux de 2px de large par 3px de haut ;
+Pour chaque tuile, trouver les couleurs de fond et de texte ;
+Convertir chacunes de ces tuiles en dessin de 2px par 3px ;
+Envoyer un signal d'effacement d'écran et de passage en mode semi-graphique ;
+Puis envoyer pour chaque position en ligne et chaque position en colonne le motif et les couleurs.
+
+L'ESP8266 n'ayant pas une grosse capacité de mémoire, j'ai transféré ce traitement au niveau "client", c'est-à-dire soit au navigateur web, qui affiche le formulaire de test présent sur la carte électronique, soit au bot Twitch.
+*/
