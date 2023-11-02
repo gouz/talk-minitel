@@ -1,4 +1,4 @@
-const url = `http://192.168.1.11`;
+const url = `http://${window.slidesk.env.MINITEL_IP}`;
 
 function sliceIntoChunks(arr, chunkSize) {
   const res = [];
