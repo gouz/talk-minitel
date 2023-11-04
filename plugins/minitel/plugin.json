@@ -1,6 +1,6 @@
 {
   "addHTML": "<canvas width=\"80\" height=\"72\" id=\"minitel-canvas\"></canvas>",
-  "addScriptsAfter": [
+  "addScripts": [
     "./plugins/minitel/CanvasManager.js",
     "./plugins/minitel/ConvertVideotex.js",
     "./plugins/minitel/minitel.js"
