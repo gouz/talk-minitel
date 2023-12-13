@@ -4,9 +4,9 @@ custom_css: assets/custom.css
 
 # 3615 Twitch
 
-!include(_introduction.sdf)
+!include(slides/introduction.sdf)
 
-!include(_history.sdf)
+!include(slides/history.sdf)
 
 /*
 include(_conception.sdf)

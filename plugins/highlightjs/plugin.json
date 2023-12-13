@@ -1,0 +1,15 @@
+{
+  "addScripts": [
+    "./plugins/highlightjs/highlight.min.js",
+    "./plugins/highlightjs/highlightjs.copy.js",
+    "./plugins/highlightjs/plugin.js"
+  ],
+  "addStyles": [
+    "./plugins/highlightjs/dark.min.css",
+    "./plugins/highlightjs/highlightjs.copy.css",
+    "./plugins/highlightjs/plugin.css"
+  ],
+  "addSpeakerScripts": ["./plugins/highlightjs/highlight.min.js"],
+  "addSpeakerStyles": ["./plugins/highlightjs/default.min.css"],
+  "onSpeakerViewSlideChange": "if (hljs) { hljs.addPlugin(new CopyButtonPlugin()); hljs.highlightAll(); }"
+}

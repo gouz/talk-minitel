@@ -1,0 +1,51 @@
+## Videotex
+
+/*
+Dans un premier temps, concentrons-nous sur la gestion des motifs du mode semi-graphique du Minitel.
+
+Comme écrit précédemment, nous allons découper les images en rectangle de 2px par 3px.
+Le mode semi-graphique permet de créer des motifs dans ces rectangles et de stocker cette information sur 7 bits.
+
+
+Bernard MARTI — Travail personnel
+Extrait d'un cours donné à l'Université de Paris Dauphine sur l'histoire du Vidéotex : code mosaïque.
+
+
+D’après le tableau ci-dessus, on peut constater que pour obtenir uniquement les motifs, “b6” doit être à 1 (ce qui correspond au bit 5).
+
+On obtient alors la correspondance suivante :
+
+
+Ainsi le motif suivant correspond à la valeur 0b1110111 ou plus simplement en hexadécimal 0x77 :
+
+
+Maintenant que nous avons compris comment est généré un motif, il faut savoir quel est le motif à réaliser en fonction de l’image.
+
+Pour cela, nous allons introduire une nouvelle notion : la luminance.
+
+En technique vidéo couleur, le signal de luminance ou luma, couramment nommé luminance, est la partie du signal, commune avec la vidéo noir et blanc, qui transporte l'information de luminosité de chaque élément de l'écran.
+
+Pour construire la luma Y’, le Minitel utilise la recommandation UIT-R BT 601 en se basant sur les composantes rouge R, verte G et bleue B, elles-mêmes codées sur 256 valeurs :
+
+Y’ = 0.299 x R + 0.587 x G + 0.114 x B
+La luma est également encodée sur 256 valeurs. Par exemple, le blanc pur donne la valeur 255. Un bleu pur donne une luma faible 29.07.
+
+En parcourant les 6 pixels de l’image qui donneront le motif “Minitel”, nous pouvons donc définir la luma la plus grande et la luma la plus faible. Puis, pour chaque pixel, on compare les lumas pour savoir si l’on prend la luma faible, qui sera la couleur de fond, ou la luma forte, qui sera la couleur de texte.
+
+Le Minitel 1b permet l’affichage de 8 niveaux de gris, du noir au blanc. Ces niveaux de gris sont caractérisés par les couleurs suivantes : 
+Noir
+Bleu
+Rouge
+Magenta
+Vert
+Cyan
+Jaune
+Blanc
+
+Arbitrairement, pour calculer la couleur qui correspond à la luma déterminée précédemment, nous divisons la luma par 32 (32 x 8 = 256).
+
+La définition d’un motif sur le Minitel est donc caractérisée par :
+Sa couleur de texte ;
+Sa couleur de fond ;
+Son motif.
+*/

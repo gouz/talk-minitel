@@ -1,0 +1,3 @@
+{
+  "onSlideChange": "window.slidesk.slides[window.slidesk.currentSlide].querySelectorAll(\".reload\").forEach((i) => {i.setAttribute(\"src\", i.getAttribute(\"src\"));});"
+}
