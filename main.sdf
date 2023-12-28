@@ -4,6 +4,10 @@ custom_css: assets/custom.css
 
 # 3615 Twitch
 
+<div class="minitel">
+un bot dans mon minitel
+</div>
+
 !include(slides/introduction.sdf)
 
 !include(slides/history.sdf)

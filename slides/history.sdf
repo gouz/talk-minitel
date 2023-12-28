@@ -2,13 +2,13 @@
 
 ## .[auto-4500]
 
-<img class="reload" src="./assets/historique/backtothefuture.gif" style="position: absolute; top: 0; left: 0; margin: 0; width: 100%; height: 100%;" />
+<img class="reload full-sized" src="./assets/history/backtothefuture.gif" />
 
 ## MINITEL
 
 Médium Interactif par Numérisation d’Information TELéphonique
 
-Début 80s => 2012
+Début 80s => 30 juin 2012
 
 /*
 ce qui est somme toute assez tard au vu de l’arrivée d’internet dans le milieu des années 90. 
@@ -16,18 +16,59 @@ ce qui est somme toute assez tard au vu de l’arrivée d’internet dans le mil
 
 ## A quoi ça sert ???? .[steps]
 
-- Renseignements
-- Annuaires 
+- Renseignements / Annuaires 
 - Vente A Distance
 - Résultats des examens
 - Sites de rencontres
 - Petites annonces
 - Minitel rose
+- Blablacar
+- forums
+- mails
 
 /*
-qui a fait la fortune du créateur d’un des fournisseurs d’accès à Internet.
+qui a fait la fortune du créateur d’un des fournisseurs d’accès à Internet. et la risée de la france pour cette technologie
+*/
+
+## Déploiement
+
+55 utilisateurs à Saint-Malô en Juillet 1980
+
+4000 en Ille-et-Vilaine en 1981
+
+4 juin 1982 : lancement officiel
+
+/*
+Giscard, informatiser la france
+
+Remplacement de l'annuaire 
+Avant c'était que dans les départements, impossible de trouver ailleurs
+Minitel gratuit si on était abonné aux PTT
+
+1 franc la minute, avec l'inflation : 0.34e la minute, environ 20e de l'heure
+*/
+
+## Février 1984
+
+3615
+
+/*
+DGT prenait 30 à 40% sur les communications
+
+la moitié des revenus vennait du minitel rose
 */
 
 ## Technique
 
-Ce terminal est une conception française qui implémente la norme Antiope du service de télécommunications Vidéotex
+<div class="bigger">
+🐓🇫🇷
+</div>
+
+Transpac
+
+Norme Antiope du service de télécommunications Vidéotex
+
+/*
+
+En 1977 choix entre Transpac et Cyclades => Cyclades basé sur un réseau distribué comme Arpanet
+Transpac offrait un monopole sur le réseau à l'état qui lui permettait de tout controller
