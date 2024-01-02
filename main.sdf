@@ -5,17 +5,19 @@ custom_css: assets/custom.css
 # 3615 Twitch
 
 <div class="minitel">
-un bot dans mon minitel
+un bot dans mon minitel ?
 </div>
 
 !include(slides/introduction.sdf)
 
 !include(slides/history.sdf)
 
-/*
-include(_conception.sdf)
+!include(slides/videotex.sdf)
 
-include(_videotex.sdf)
+!include(slides/conception.sdf)
+
+/*
+
 
 include(_conversion.sdf)
 

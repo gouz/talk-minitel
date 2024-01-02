@@ -1,5 +1,3 @@
-## Conception & Recherche
-
 /*
 Dans cet article, pour la partie Hardware, j’ai utilisé un ESP8266, mais le code est également fonctionnel avec un Arduino disposant d’un module WiFi.
 
@@ -14,8 +12,6 @@ optionnel mais recommandé : une breadboard
 Pour la partie logicielle, le principe est de développer un Bot Twitch qui va communiquer avec l'ESP8266 via le WiFi. Ainsi, il faudra développer un serveur web capable de comprendre les réponses GET et POST. 
 
 L'ESP8266 n'ayant pas énormément de mémoire, le traitement de l'image se fera au niveau du Bot.
-
-La résolution du Minitel est de 24 rangées de 40 caractères. Il est possible de passer en mode semi-graphique pour diviser chaque caractères en rectangles de 2 pixels horizontaux pour 3 pixels verticaux.  Nous obtenons donc une résolution de 80px de large sur 72px de haut. Le minitel est capable d’afficher 8 niveaux de gris, mais les rectangles de pixels ne peuvent avoir que 2 couleurs différentes, la couleur du "texte" et la couleur de fond.
 
 En résumé, pour afficher une image sur le Minitel, il faut :
 La redimensionner en 80px par 72px ;

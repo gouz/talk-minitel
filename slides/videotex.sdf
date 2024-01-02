@@ -1,5 +1,25 @@
 ## Videotex
 
+!image(assets/videotex/transpac.drawio.svg, transpac, 1000)
+
+/*
+Le Vidéotex est un service de télécommunications permettant l'envoi de pages composées de textes et de graphismes simples à un utilisateur en réponse à une requête de ce dernier (interactivité)
+Ces pages sont destinées à être visualisées sur un écran cathodique, par exemple sur une télévision ou tout autre écran au format de la télévision.
+Le Minitel français est le terminal adapté à ce service. 
+*/
+
+## Caractéristiques techniques
+
+/*
+La résolution du Minitel est de 24 rangées de 40 caractères.
+*/
+
+## Le mode Semi-graphique
+
+Il est possible de passer en mode semi-graphique pour diviser chaque caractères en rectangles de 2 pixels horizontaux pour 3 pixels verticaux.  
+Nous obtenons donc une résolution de 80px de large sur 72px de haut. 
+Le minitel est capable d’afficher 8 niveaux de gris, mais les rectangles de pixels ne peuvent avoir que 2 couleurs différentes, la couleur du "texte" et la couleur de fond.
+
 /*
 Dans un premier temps, concentrons-nous sur la gestion des motifs du mode semi-graphique du Minitel.
 

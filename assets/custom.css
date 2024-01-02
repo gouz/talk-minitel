@@ -34,6 +34,10 @@ h1 {
   text-transform: uppercase;
 }
 
+.minitel {
+  font-family: "Minitel";
+}
+
 .sd-slide {
   background-image: url(annuaire.jpg);
   background-size: cover;
