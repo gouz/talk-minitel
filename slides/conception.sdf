@@ -1,3 +1,7 @@
+## Conception
+
+
+
 /*
 Dans cet article, pour la partie Hardware, j’ai utilisé un ESP8266, mais le code est également fonctionnel avec un Arduino disposant d’un module WiFi.
 

@@ -14,12 +14,11 @@ un bot dans mon minitel ?
 
 !include(slides/videotex.sdf)
 
+!include(slides/conversion.sdf)
+
 !include(slides/conception.sdf)
 
 /*
-
-
-include(_conversion.sdf)
 
 include(_twitch.sdf)
 

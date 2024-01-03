@@ -1,6 +1,6 @@
 ## Videotex
 
-!image(assets/videotex/transpac.drawio.svg, transpac, 1000)
+!image(assets/videotex/transpac.drawio.svg, transpac, 900)
 
 /*
 Le Vidéotex est un service de télécommunications permettant l'envoi de pages composées de textes et de graphismes simples à un utilisateur en réponse à une requête de ce dernier (interactivité)
@@ -10,7 +10,7 @@ Le Minitel français est le terminal adapté à ce service.
 
 ## Teletexte
 
-!image(assets/videotex/teletexte_tf1.webp, teletexte, 1000)
+!image(assets/videotex/teletexte_tf1.webp, teletexte, 800)
 
 ## Caractéristiques techniques .[sbs]
 
@@ -129,42 +129,42 @@ Y' = 29,07
 <td>Luma</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: black; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #000000; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Noir</td>
 <td align="right">0</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: blue; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #0000FF; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Bleu</td>
 <td align="right">29.07</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: red; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #FF0000; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Rouge</td>
 <td align="right">76.245</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: magenta; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #FF00FF; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Magenta</td>
 <td align="right">105.315</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: green; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #00FF00; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Vert</td>
 <td align="right">149.685</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: cyan; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #00FFFF; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Cyan</td>
 <td align="right">178.755</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: yellow; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #FFFF00; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Jaune</td>
 <td align="right">225.93</td>
 </tr>
 <tr>
-<td><span style="width: 3vw; height: 3vw; background: white; display: inline-block; margin: 0 2vw;"></span></td>
+<td><span style="width: 3vw; height: 3vw; background: #FFFFFF; display: inline-block; margin: 0 2vw;"></span></td>
 <td>Blanc</td>
 <td align="right">255</td>
 </tr>
