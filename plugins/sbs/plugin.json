@@ -1,0 +1,5 @@
+{
+  "addScripts": ["./plugins/sbs/sbs.js"],
+  "addStyles": ["./plugins/sbs/sbs.css"],
+  "onSlideChange": "window.slidesk.sbs();"
+}

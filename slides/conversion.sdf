@@ -1,6 +1,9 @@
 ## Conversion image
 
 /*
+
+En parcourant les 6 pixels de l’image qui donneront le motif “Minitel”, nous pouvons donc définir la luma la plus grande et la luma la plus faible. Puis, pour chaque pixel, on compare les lumas pour savoir si l’on prend la luma faible, qui sera la couleur de fond, ou la luma forte, qui sera la couleur de texte.
+
 Maintenant que la théorie est expliquée, nous allons passer au développement de cette conversion. J’ai choisi le langage Javascript pour faciliter la mutualisation du code entre le Bot, qui est développé sous NodeJS, et le serveur de démonstration, qui est une page web.
 
 Rappelons les étapes : 

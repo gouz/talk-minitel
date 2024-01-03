@@ -8,64 +8,177 @@ Ces pages sont destinées à être visualisées sur un écran cathodique, par ex
 Le Minitel français est le terminal adapté à ce service. 
 */
 
-## Caractéristiques techniques
+## Teletexte
+
+!image(assets/videotex/teletexte_tf1.webp, teletexte, 1000)
+
+## Caractéristiques techniques .[sbs]
+
+!image(assets/videotex/resolution.drawio.svg)
 
 /*
 La résolution du Minitel est de 24 rangées de 40 caractères.
 */
 
-## Le mode Semi-graphique
+## Mode semi-graphique
 
+!image(assets/videotex/semi-graphique.drawio.svg)
+
+/*
 Il est possible de passer en mode semi-graphique pour diviser chaque caractères en rectangles de 2 pixels horizontaux pour 3 pixels verticaux.  
 Nous obtenons donc une résolution de 80px de large sur 72px de haut. 
 Le minitel est capable d’afficher 8 niveaux de gris, mais les rectangles de pixels ne peuvent avoir que 2 couleurs différentes, la couleur du "texte" et la couleur de fond.
+*/
+
+## Nouvelle résolution .[sbs]
+
+!image(assets/videotex/resolution_px.drawio.svg)
+
+## Les motifs
+
+!image(assets/videotex/code_mosaique.png, code mosaïque,, 600)
+
+<div class="small">
+
+__Bernard MARTI — Travail personnel__
+
+__Extrait d'un cours donné à l'Université de Paris Dauphine sur l'histoire du Vidéotex : code mosaïque__
+
+</div>
 
 /*
-Dans un premier temps, concentrons-nous sur la gestion des motifs du mode semi-graphique du Minitel.
-
-Comme écrit précédemment, nous allons découper les images en rectangle de 2px par 3px.
 Le mode semi-graphique permet de créer des motifs dans ces rectangles et de stocker cette information sur 7 bits.
+D’après le tableau, on peut constater que pour obtenir uniquement les motifs, “b6” doit être à 1 (ce qui correspond au bit 5).
+*/
 
+## Structure d'un caractère
 
-Bernard MARTI — Travail personnel
-Extrait d'un cours donné à l'Université de Paris Dauphine sur l'histoire du Vidéotex : code mosaïque.
+!image(assets/videotex/caractere.drawio.svg)
 
+## 0b1110111 ou 0x77
 
-D’après le tableau ci-dessus, on peut constater que pour obtenir uniquement les motifs, “b6” doit être à 1 (ce qui correspond au bit 5).
+!image(assets/videotex/caractere.c.drawio.svg)
 
-On obtient alors la correspondance suivante :
-
-
+/*
 Ainsi le motif suivant correspond à la valeur 0b1110111 ou plus simplement en hexadécimal 0x77 :
-
-
 Maintenant que nous avons compris comment est généré un motif, il faut savoir quel est le motif à réaliser en fonction de l’image.
+*/
 
+## La luminance ou luma (Y')
+
+!image(assets/videotex/Art_Luma_Galaxy.webp)
+
+Partie du signal qui transporte l'information de luminosité de chaque élément de l'écran
+
+/*
 Pour cela, nous allons introduire une nouvelle notion : la luminance.
 
 En technique vidéo couleur, le signal de luminance ou luma, couramment nommé luminance, est la partie du signal, commune avec la vidéo noir et blanc, qui transporte l'information de luminosité de chaque élément de l'écran.
-
-Pour construire la luma Y’, le Minitel utilise la recommandation UIT-R BT 601 en se basant sur les composantes rouge R, verte G et bleue B, elles-mêmes codées sur 256 valeurs :
-
-Y’ = 0.299 x R + 0.587 x G + 0.114 x B
-La luma est également encodée sur 256 valeurs. Par exemple, le blanc pur donne la valeur 255. Un bleu pur donne une luma faible 29.07.
-
-En parcourant les 6 pixels de l’image qui donneront le motif “Minitel”, nous pouvons donc définir la luma la plus grande et la luma la plus faible. Puis, pour chaque pixel, on compare les lumas pour savoir si l’on prend la luma faible, qui sera la couleur de fond, ou la luma forte, qui sera la couleur de texte.
-
-Le Minitel 1b permet l’affichage de 8 niveaux de gris, du noir au blanc. Ces niveaux de gris sont caractérisés par les couleurs suivantes : 
-Noir
-Bleu
-Rouge
-Magenta
-Vert
-Cyan
-Jaune
-Blanc
-
-Arbitrairement, pour calculer la couleur qui correspond à la luma déterminée précédemment, nous divisons la luma par 32 (32 x 8 = 256).
-
-La définition d’un motif sur le Minitel est donc caractérisée par :
-Sa couleur de texte ;
-Sa couleur de fond ;
-Son motif.
 */
+
+## Et sur le minitel ?
+
+<div class="formula">
+
+Y’ = 0,299 x R + 0,587 x G + 0,114 x B
+
+</div>
+
+/*
+
+Pour construire la luma Y’, le Minitel utilise la recommandation UIT-R BT 601 en se basant sur les composantes rouge R, verte G et bleue B, elles-mêmes codées sur 256 valeurs. La luma est également encodée sur 256 valeurs.
+*/
+
+## Blanc pur
+
+<span style="width: 5vw; height: 5vw; background: white; display: inline-block; margin-bottom: 3vw;"></span>
+
+<div class="formula">
+
+Y’ = 0,299 x 255 + 0,587 x 255 + 0,114 x 255
+
+Y' = 76,245 + 149,685 + 29,07
+
+Y' = 255
+
+</div>
+
+## Bleu pur
+
+<span style="width: 5vw; height: 5vw; background: blue; display: inline-block; margin-bottom: 3vw;"></span>
+
+<div class="formula">
+
+Y’ = 0,299 x 0 + 0,587 x 0 + 0,114 x 255
+
+Y' = 0 + 0 + 29,07
+
+Y' = 29,07
+
+</div>
+
+## Les couleurs disponibles
+
+<table>
+<tr>
+<td rowspan="9">
+!image(assets/videotex/mire.jpeg)
+</td>
+<td></td>
+<td>Couleur</td>
+<td>Luma</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: black; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Noir</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: blue; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Bleu</td>
+<td align="right">29.07</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: red; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Rouge</td>
+<td align="right">76.245</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: magenta; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Magenta</td>
+<td align="right">105.315</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: green; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Vert</td>
+<td align="right">149.685</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: cyan; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Cyan</td>
+<td align="right">178.755</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: yellow; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Jaune</td>
+<td align="right">225.93</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: white; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Blanc</td>
+<td align="right">255</td>
+</tr>
+</table>
+
+/*
+Arbitrairement, pour calculer la couleur qui correspond à la luma déterminée précédemment, nous divisons la luma par 32 (32 x 8 = 256).
+*/
+
+## Résumé
+
+1 motif de 2x3
+
+2 couleurs parmi 8 :
+
+- Texte
+- Surlignage

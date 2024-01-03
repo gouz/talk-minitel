@@ -9,10 +9,12 @@ function sliceIntoChunks(arr, chunkSize) {
   return res;
 }
 
-const CM = new CanvasManager(document.querySelector("#minitel-canvas"));
+let CM = null;
 const CV = new ConvertVideotex();
 
 window.slidesk.checkSlide = () => {
+  if (CM === null)
+    CM = new CanvasManager(document.querySelector("#minitel-canvas"));
   const minitel =
     window.slidesk.slides[window.slidesk.currentSlide].querySelector(
       "img[data-minitel]"
