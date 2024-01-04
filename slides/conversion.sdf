@@ -4,6 +4,8 @@
 
 Merci @aurelievache
 
+!minitel(assets/conversion/rillettes.png)
+
 ## Redimensionnement 80x72 .[conversion]
 
 !image(assets/conversion/rillettes_80.png, rillettes, 80)
@@ -29,6 +31,8 @@ Blanc
 ## Résultat .[conversion]
 
 !image(assets/conversion/convert.png,, 80)
+
+!minitel(assets/conversion/convert.png)
 
 ## Résultat .[conversion]
 

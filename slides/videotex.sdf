@@ -70,6 +70,8 @@ Maintenant que nous avons compris comment est généré un motif, il faut savoir
 
 Partie du signal qui transporte l'information de luminosité de chaque élément de l'écran
 
+!minitel(assets/videotex/Art_Luma_Galaxy.webp)
+
 /*
 Pour cela, nous allons introduire une nouvelle notion : la luminance.
 

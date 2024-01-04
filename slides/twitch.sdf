@@ -2,6 +2,8 @@
 
 !image(assets/twitch/twitch.svg,,400)
 
+!minitel(assets/twitch/twitch.svg)
+
 ## 🤖 .[twitch]
 
 <div class="minitel">
@@ -11,6 +13,8 @@
 ## .[twitch]
 
 !image(assets/twitch/productionsdemoa.jpeg,,1400)
+
+!minitel(assets/minitel/productionsdemoa.jpeg)
 
 /*
 Gauche: le flux
