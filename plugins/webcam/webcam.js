@@ -6,7 +6,7 @@ if (navigator.mediaDevices.getUserMedia) {
     .then((stream) => {
       video.srcObject = stream;
     })
-    .catch((err0r) => {
+    .catch((_) => {
       console.log("Something went wrong!");
     });
 }

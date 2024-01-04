@@ -8,7 +8,7 @@ custom_css: assets/custom.css
 un bot dans mon minitel ?
 </div>
 
-!minitel(assets/minitel/TNT.jpg)
+!minitel(assets/minitel/TNT.png)
 
 !include(slides/introduction.sdf)
 
@@ -50,6 +50,16 @@ Backgrounds : Unsplash, ...
 
 ## 🫶
 
+<table>
+<tr>
+<td>
+
 des questions ?
 
 !image(assets/feedbacks.png)
+</td>
+<td>
+<video autoplay="true" id="webcam"></video>
+</td>
+</tr>
+</table>
