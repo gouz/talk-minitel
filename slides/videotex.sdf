@@ -12,7 +12,7 @@ Le Minitel français est le terminal adapté à ce service.
 
 !image(assets/videotex/teletexte_tf1.webp, teletexte, 800)
 
-## Caractéristiques techniques .[sbs]
+## Caractéristiques techniques .[sbs svgconvert]
 
 !image(assets/videotex/resolution.drawio.svg)
 
@@ -30,7 +30,7 @@ Nous obtenons donc une résolution de 80px de large sur 72px de haut.
 Le minitel est capable d’afficher 8 niveaux de gris, mais les rectangles de pixels ne peuvent avoir que 2 couleurs différentes, la couleur du "texte" et la couleur de fond.
 */
 
-## Nouvelle résolution .[sbs]
+## Nouvelle résolution .[sbs svgconvert]
 
 !image(assets/videotex/resolution_px.drawio.svg)
 

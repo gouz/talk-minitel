@@ -6,9 +6,11 @@ const convertToSVG = async (img) => {
 
 const convertAllSVG = async () => {
   await Promise.all(
-    [...document.querySelectorAll('img[src*=".svg"]')].map(async (img) => {
-      await convertToSVG(img);
-    })
+    [...document.querySelectorAll('.svgconvert img[src*=".svg"]')].map(
+      async (img) => {
+        await convertToSVG(img);
+      }
+    )
   );
 };
 convertAllSVG();
