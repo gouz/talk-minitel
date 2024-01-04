@@ -108,3 +108,19 @@ table ul li {
 #sd-progress .sd-progression {
   border: none;
 }
+
+.no-center {
+  display: block;
+}
+
+.no-center h2 {
+  margin-bottom: 50px;
+}
+
+.no-center p {
+  text-align: left;
+}
+
+.sd-slide.electronic {
+  background-image: url(electronic/NodeMCU_DEVKIT_1.0.jpg);
+}

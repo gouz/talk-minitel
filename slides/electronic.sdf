@@ -1,121 +1,65 @@
-## Electronique
+## Electronique .[electronic]
+
+## DIN .[electronic]
+
+!image(assets/electronic/din.jpeg,din, 900)
+
+## Fonctionnement .[electronic]
+
+Serial Port
+
+RX, TX, GND
+
+## Carte électronique .[electronic]
+
+NodeMCU ESP8266
+
+!image(assets/electronic/NodeMCU_DEVKIT_1.0.jpg,,700)
+
+## Branchement .[electronic]
+
+<table>
+<tr>
+<td>
+!image(assets/electronic/image10.png,,, 500)
+</td>
+<td>
+!image(assets/electronic/image11.png,,, 500)
+</td>
+</tr>
+</table>
 
 /*
-Pour rappel, nous avons besoin de :
-un Minitel 1B (avec une prise DIN5)
-un ESP8266 (Nodemcu ESP8266 ESP-12F)
-une résistance de 4,7kΩ
-une résistance de 1kΩ
-des câbles
-optionnel mais recommandé : une breadboard
-
-Le schéma de connexion entre l’ESP8266 et le Minitel est le suivant :
-
-
-D’après ce schéma, nous pouvons donc câbler notre NodeMCU suivant la figure suivante :
-
 Mettre une résistance entre la broche TX de l’ESP8266 et RX du Minitel permet de filtrer le signal pour obtenir une meilleure transmission. Même principe côté RX de l’ESP8266 avec une résistance “Pullup” pour nettoyer les ondes électromagnétiques qui sont générées par le Minitel.
+*/
 
-L’utilisation de l’excellente bibliothèque Minitel1B_Soft de Éric Sérandour (https://github.com/eserandour/Minitel1B_Soft) m’a permis de simplifier la communication entre l’ESP8266 et le Minitel.
+## Bibliothèques .[electronic]
 
-Passons maintenant à la configuration de l’IDE Arduino (https://www.arduino.cc/en/software) pour qu’il puisse communiquer avec l’ESP8266. Pour cela il faut ajouter dans le gestionnaire de cartes additionnelles l’url suivante : http://arduino.esp8266.com/stable/package_esp8266com_index.json
+https://github.com/eserandour/Minitel1B_Soft
 
+🙏 Éric Sérandour
 
+ESPAsyncWebSrv et ESPAsyncTCP
 
-Le programme, qui sera présent sur la carte, doit utiliser une bibliothèque pour la création d’un serveur web : ESPAsyncWebSrv, qui a besoin elle aussi d’une autre dépendance, ESPAsyncTCP. Nous devons donc installer ces deux bibliothèques avec le gestionnaire de bibliothèques.
+## Arduino - Headers .[electronic]
 
-
-
-Maintenant, quand vous connectez votre NodeMCU ou ESP8266 à votre ordinateur, en choisissant le bon port USB dans l’IDE Arduino, il doit vous afficher :
-
-
-La configuration de notre environnement de développement étant terminée, nous allons passer à la logique de développement.
-
-Tout d’abord, nous devons configurer la bibliothèque Minitel1B_Soft pour bien communiquer avec le Minitel. Le port RX du NodeMCU est la broche 3 et le port TX est la broche 1.
-Minitel minitel(3, 1); // RX, TX
-
-Dans la partie “setup” du programme, on cherche la bonne vitesse de communication avec l’instruction suivante :
-minitel.changeSpeed(minitel.searchSpeed());
-
-Puis on nettoie l’écran pour préparer la suite du programme :
-minitel.newScreen();
-
-Notre ESP8266 pouvant se connecter à notre réseau WiFi, il faut le configurer et, pendant que la connexion se fait, afficher que la recherche est en cours. Une fois connecté, on affiche l’adresse IP afin d’accéder plus facilement au serveur de démonstration ou pour configurer notre Bot Twitch.
-const char *ssid = "YOUR_SSID";
-const char *password = "YOUR_PASSWORD";
-
-void setup() {
-  // Connect to Wi-Fi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    minitel.newScreen();
-    minitel.println("Connecting to WiFi...");
-    delay(1000);
-  }
-  minitel.newScreen();
-  minitel.println(WiFi.localIP().toString());
-}
-
-La dernière partie du programme est le serveur web qui va permettre d’afficher le formulaire de test et de réceptionner l’image convertie.
-AsyncWebServer server(80);
-Dans la partie “setup”, nous définissons les différentes routes :
-
-A la racine, en GET, on renvoie le formulaire d’upload d’image et de traitement.
-server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) { request->send(200, "text/html", "<!doctype html><html lang=en>...</html>"); });
-
-Sur “/new”, en GET, on exécute un effacement de l’écran du Minitel
-server.on("/new", HTTP_GET, [](AsyncWebServerRequest *request) {
-  minitel.newScreen();
-  request->send(200); 
-});
-
-
-Sur “/end”, en GET, on enlève le curseur du Minitel.
-server.on("/end", HTTP_GET, [](AsyncWebServerRequest *request) {
-  minitel.noCursor();
-  request->send(200); 
-});
-
-Sur “/post”, en POST, on exécute la fonction de traitement de la trame Vidéotex.
-server.on("/post", HTTP_POST, [](AsyncWebServerRequest *request) {}, handleUpload);
-
-void handleUpload(AsyncWebServerRequest *request, String filename, size_t index, uint8_t *data, size_t len, bool final) 
-{
-  for (size_t i = 0; i < len; i++) 
-  {
-    minitel.writeByte(data[i]);
-  }
-  request->send(200);
-}
-
-Pour éviter des problèmes de CORS, on ajoute la ligne suivante :
-DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
-
-Ce qui nous donne le programme complet suivant :
-
+```arduino
 #include "Minitel1B_Soft.h"
 #include <ESP8266WiFi.h>
 #include <ESPAsyncTCP.h>
 #include <ESPAsyncWebSrv.h>
-
 Minitel minitel(3, 1); // RX, TX
-const char *ssid = "YOUR_SSID";
-const char *password = "YOUR_PASSWORD";
+const char *ssid = "3615Twitch";
+const char *password = "gouz.dev";
 AsyncWebServer server(80);
+```
 
-void handleUpload(AsyncWebServerRequest *request, String filename, size_t index, uint8_t *data, size_t len, bool final) 
-{
-  for (size_t i = 0; i < len; i++) 
-    minitel.writeByte(data[i]);
-  request->send(200);
-}
+## Arduino - Setup 1 .[electronic]
 
+```arduino
 void setup() 
 {
-  minitel.changeSpeed(minitel.searchSpeed());
-  minitel.newScreen();
-  // Connect to Wi-Fi
+  minitel.changeSpeed(4800);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED)
   {
@@ -125,8 +69,16 @@ void setup()
   }
   minitel.newScreen();
   minitel.println(WiFi.localIP().toString());
-  // Route for root / web page
-  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) { request->send(200, "text/html", "<!doctype html><html lang=en>...</html>"); });
+```
+
+++MINITEL_IP++
+
+## Arduino - Setup 2 .[electronic]
+
+```arduino
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) { 
+    request->send(200, "text/html", "<!doctype html><html lang=en>...</html>"); 
+  });
   server.on("/new", HTTP_GET, [](AsyncWebServerRequest *request) {
     minitel.newScreen();
     request->send(200); 
@@ -135,14 +87,25 @@ void setup()
     minitel.noCursor();
     request->send(200); 
   });
-  server.on("/post", HTTP_POST, [](AsyncWebServerRequest *request) {}, handleUpload);
-  // accept CORS
- DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
-  // Start server
+  server.on("/post", HTTP_POST, [](AsyncWebServerRequest *request) {}, 
+            handleUpload);
+  DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", 
+                                       "*");
   server.begin();
   minitel.println("Ready!");
 }
+```
 
+## Arduino - loop & handleUpload
+
+```arduino
 void loop() {}
-
-*/
+void handleUpload(AsyncWebServerRequest *request, 
+                  String filename, size_t index, 
+                  uint8_t *data, size_t len, 
+                  bool final) {
+  for (size_t i = 0; i < len; i++) 
+    minitel.writeByte(data[i]);
+  request->send(200);
+}
+```

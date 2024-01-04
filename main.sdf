@@ -16,17 +16,36 @@ un bot dans mon minitel ?
 
 !include(slides/conversion.sdf)
 
-!include(slides/conception.sdf)
+!include(slides/electronic.sdf)
 
 /*
 
 include(_twitch.sdf)
 
-include(_electronic.sdf)
-
 include(_conclusion.sdf)
 */
+
+## Crédit .[no-center]
+
+SliDesk: https://github.com/slidesk/slidesk
+
+Fonts: Minitel & Handlee
+
+NodeMCU photo: Vowstar
+
+## Remerciements .[no-center]
+
+Aurélie Vache
+
+Thierry Chantier
+
+Eric Sérandour
+
+Bernard Marti
+
 
 ## 🫶 .[cover]
 
 des questions ?
+
+!image(assets/feedbacks.png)
