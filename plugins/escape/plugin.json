@@ -1,0 +1,3 @@
+{
+  "addScripts": ["./plugins/escape/escape.js"]
+}

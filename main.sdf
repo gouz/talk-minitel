@@ -20,10 +20,9 @@ un bot dans mon minitel ?
 
 !include(slides/electronic.sdf)
 
+!include(slides/twitch.sdf)
+
 /*
-
-include(_twitch.sdf)
-
 include(_conclusion.sdf)
 */
 
@@ -41,11 +40,13 @@ Backgrounds : Unsplash, ...
 
 🐈‍⬛ Aurélie Vache
 
-🐼 Thierry Chantier
+🐼 Thierry Chantier & Kongduino
 
 💾 Eric Sérandour
 
 🎓 Bernard Marti
+
+📖 François Tonic & le magazine Programmez! (n°258)
 
 
 ## 🫶

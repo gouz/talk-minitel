@@ -1,122 +1,64 @@
-## Bot Twitch
+## Twitch .[twitch]
+
+!image(assets/twitch/twitch.svg,,400)
+
+## 🤖 .[twitch]
+
+<div class="minitel">
+  Comment fonctionne un bot ?
+</div>
+
+## .[twitch]
+
+!image(assets/twitch/productionsdemoa.jpeg,,1400)
 
 /*
-Le principe d’un Bot Twitch est de se connecter au tchat et d’interagir avec les messages écrits par les viewers.
-Pour simplifier le développement, j’ai utilisé la bibliothèque tmi.js, disponible ici : https://www.npmjs.com/package/tmi.js
+Gauche: le flux
+Droite: le tchat
+*/
 
-L’idée est de lire les messages des viewers. Si un message commence par “!3615”, alors il s’agit d’une commande pour le bot. Pour les modérateurs et administrateurs, qui sont des personnes de confiance, il sera possible d’utiliser directement l’URL d’une image. Pour les viewers, afin d’éviter des images bannies de Twitch, je suis parti de la réflexion suivante : “Prendre une image aléatoire sur le site Giphy, via leur API, en fonction du mot-clé succédant à la commande !3615 avec l’utilisation du paramètre de limitation d'âge”.
+## Interactions avec le tchat .[twitch steps]
 
-Il est important de noter qu’il faut stocker les demandes car si une image est en cours d’envoi au minitel, il est impossible de lui en envoyer une autre.
+- Evènement levé par message
+- Possibilité d'écrire dans le tchat
+- https://www.npmjs.com/package/tmi.js
 
-const treatMessage = ({ message, tags }) => {
-  const parts = message.toString().split(" ");
-  const cmd = parts.shift();
-  if (cmd.toLowerCase() === "!3615") {
-    const prompt = parts.join(" ");
-    if ((tags.mod || tags.badges.broadcaster) && prompt.startsWith("http")) {
-      // is moderator, then this viewer can send image directly
-      loadImage(prompt).then(treatImage);
-    } else {
-      axios
-        .get(
-          `https://api.giphy.com/v1/gifs/random?api_key=${
-            GIPHY_API_KEY
-          }&tag=${encodeURI(prompt)}`
-        )
-        .then((response) => {
-          loadImage(response.data.data.images.original.url).then(treatImage);
-        });
-    }
-  }
-};
+## TMI.js .[twitch]
 
-
-La capacité de l’ESP8266 étant petite, il n’est pas envisageable de lui envoyer l’image d’un coup. Il faut donc la découper en paquets.
-
-const sliceIntoChunks = (arr, chunkSize) => {
-  const res = [];
-  for (let i = 0; i < arr.length; i += chunkSize) {
-    const chunk = arr.slice(i, i + chunkSize);
-    res.push(chunk);
-  }
-  return res;
-};
-
-Sur l’ESP8266, est implémenté un serveur Web qui comprend les méthodes GET et POST. Le cheminement d’affichage est le suivant :
-Faire un appel GET sur “/new” pour indiquer qu’une nouvelle image doit être envoyée ;
-Faire autant d’appels POST sur “/post” pour envoyer les paquets de la trame de l’image ;
-Faire un appel GET sur “/end” pour indiquer que l’envoi de l’image est terminé ;
-Afficher l’image au moins 2 secondes ;
-S’il existe des images dans la pile des messages, passer à la suivante.
-
-const treatImage = async (img) => {
-  inTreatment = true;
-  const url = `http://${MINITEL_IP}`;
-  const chunks = sliceIntoChunks(CV.convert(CM.getPixels(img)), 100);
-  await axios.get(`${url}/new`);
-  for (let i = 0; i < chunks.length; i++) {
-    await axios.post(
-      `${url}/post`,
-      {
-        encrypt: Uint8Array.from(chunks[i]),
-      },
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-  }
-  await axios.get(`${url}/end`);
-  inTreatment = false;
-  setTimeout(() => {
-    if (messageStack.length) {
-      treatMessage(messageStack.shift());
-    }
-  }, 2000); // we display at least 2 sec the image
-};
-
-Cela nous amène au code suivant pour le bot :
-
-import { CanvasManager } from "../common/CanvasManager.mjs";
-import { ConvertVideotex } from "../common/ConvertVideotex.mjs";
+```js
 import tmi from "tmi.js";
-import axios from "axios";
-import { createCanvas, loadImage } from "canvas";
-
 const client = new tmi.Client({
   options: { debug: false, messagesLogLevel: "info" },
   connection: {
     reconnect: true,
     secure: true,
   },
-  channels: [`${TWITCH_CHANNEL}`],
+  channels: ["gouz$_$_"],
 });
-
-const canvas = createCanvas(80, 72);
-const CM = new CanvasManager(canvas);
-const CV = new ConvertVideotex();
-
-const sliceIntoChunks = (arr, chunkSize) => { … };
-
-const treatImage = async (img) => { … };
-
-const treatMessage = ({ message, tags }) => { … };
-
-const messageStack = [];
-let inTreatment = false;
-
 client.connect().catch(console.error);
 client.on("message", (channel, tags, message, self) => {
   if (self) return;
-  if (inTreatment) {
-    messageStack.push({ message, tags });
-    return;
-  } else {
-    treatMessage({ message, tags });
-  }
+  treatMessage({ message, tags });
 });
+```
 
-Maintenant, au début du live, il suffit de lancer le Bot avec NodeJS et les bonnes variables d’environnement (MINITEL_IP, GIPHY_API_KEY) pour que la magie opère.
+## Traitement d'un message
 
-*/
+```js
+const treatMessage = ({ message, tags }) => {
+  const parts = message.toString().split(" ");
+  const cmd = parts.shift();
+  if (cmd.toLowerCase() === "!3615") {
+    const prompt = parts.join(" ");
+    if (
+          (tags.mod || tags.badges.broadcaster) 
+          && prompt.startsWith("http")
+    ) {
+      // is moderator, then this viewer can send image directly
+      loadImage(prompt).then(treatImage);
+    } else {
+      // ...
+    }
+  }
+};
+```
