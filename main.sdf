@@ -22,9 +22,8 @@ un bot dans mon minitel ?
 
 !include(slides/twitch.sdf)
 
-/*
-include(_conclusion.sdf)
-*/
+!include(slides/conclusion.sdf)
+
 
 ## Crédit .[no-center]
 
