@@ -44,7 +44,7 @@ h1 {
 }
 
 .sd-slide {
-  background-image: url(annuaire.jpg);
+  background-image: url(backgrounds/annuaire.jpg);
   background-size: cover;
 }
 
@@ -119,6 +119,10 @@ table ul li {
 
 .no-center p {
   text-align: left;
+}
+
+.sd-slide.conversion {
+  background-image: url(backgrounds/thomas-t-OPpCbAAKWv8-unsplash.jpg);
 }
 
 .sd-slide.electronic {

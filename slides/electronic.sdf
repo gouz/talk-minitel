@@ -96,7 +96,7 @@ void setup()
 }
 ```
 
-## Arduino - loop & handleUpload
+## Arduino - loop & handleUpload .[electronic]
 
 ```arduino
 void loop() {}

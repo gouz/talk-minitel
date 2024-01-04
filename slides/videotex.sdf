@@ -64,7 +64,7 @@ Ainsi le motif suivant correspond à la valeur 0b1110111 ou plus simplement en h
 Maintenant que nous avons compris comment est généré un motif, il faut savoir quel est le motif à réaliser en fonction de l’image.
 */
 
-## La luminance ou luma (Y')
+## La luminance ou luma (Y') .[conversion]
 
 !image(assets/videotex/Art_Luma_Galaxy.webp)
 
@@ -76,7 +76,7 @@ Pour cela, nous allons introduire une nouvelle notion : la luminance.
 En technique vidéo couleur, le signal de luminance ou luma, couramment nommé luminance, est la partie du signal, commune avec la vidéo noir et blanc, qui transporte l'information de luminosité de chaque élément de l'écran.
 */
 
-## Et sur le minitel ?
+## Et sur le minitel ? .[conversion]
 
 <div class="formula">
 
@@ -89,7 +89,7 @@ Y’ = 0,299 x R + 0,587 x G + 0,114 x B
 Pour construire la luma Y’, le Minitel utilise la recommandation UIT-R BT 601 en se basant sur les composantes rouge R, verte G et bleue B, elles-mêmes codées sur 256 valeurs. La luma est également encodée sur 256 valeurs.
 */
 
-## Blanc pur
+## Blanc pur .[conversion]
 
 <span style="width: 5vw; height: 5vw; background: white; display: inline-block; margin-bottom: 3vw;"></span>
 
@@ -103,7 +103,7 @@ Y' = 255
 
 </div>
 
-## Bleu pur
+## Bleu pur .[conversion]
 
 <span style="width: 5vw; height: 5vw; background: blue; display: inline-block; margin-bottom: 3vw;"></span>
 
@@ -117,7 +117,7 @@ Y' = 29,07
 
 </div>
 
-## Les couleurs disponibles
+## Les couleurs disponibles .[conversion]
 
 <table>
 <tr>
@@ -174,7 +174,7 @@ Y' = 29,07
 Arbitrairement, pour calculer la couleur qui correspond à la luma déterminée précédemment, nous divisons la luma par 32 (32 x 8 = 256).
 */
 
-## Résumé
+## Résumé .[conversion]
 
 1 motif de 2x3
 

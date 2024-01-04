@@ -1,16 +1,16 @@
-## Conversion d'image
+## Conversion d'image .[conversion]
 
 !image(assets/conversion/rillettes.png, rillettes, 800)
 
 Merci @aurelievache
 
-## Redimensionnement 80x72
+## Redimensionnement 80x72 .[conversion]
 
 !image(assets/conversion/rillettes_80.png, rillettes, 80)
 
-## Traitement par bloc de 2x3
+## Traitement par bloc de 2x3 .[conversion]
 
-## .[sbs]
+## .[sbs conversion]
 
 !image(assets/conversion/part.drawio.svg)
 
@@ -26,15 +26,15 @@ Cyan
 Blanc
 */
 
-## Résultat
+## Résultat .[conversion]
 
 !image(assets/conversion/convert.png,, 80)
 
-## Résultat
+## Résultat .[conversion]
 
 !image(assets/conversion/convert.png,, 800)
 
-## 
+## Luma .[conversion]
 
 ```js
 const luma = (rgb) =>
@@ -45,7 +45,7 @@ const luma = (rgb) =>
     ) / 1000
   );
 ```
-## Texte ou Surlignage
+## Texte ou Surlignage .[conversion]
 
 ```js
 const state = (x, y, colors, pixels) => {
@@ -56,7 +56,7 @@ const state = (x, y, colors, pixels) => {
 };
 ```
 
-## Motif
+## Motif .[conversion]
 
 ```js
 const motif = (x, y, colors, pixels) => {
@@ -74,13 +74,13 @@ const motif = (x, y, colors, pixels) => {
 };
 ```
 
-## Structure de la trame pour l'envoi .[steps]
+## Structure de la trame pour l'envoi .[steps conversion]
 
 - Caractère d’effacement de l’écran : ``0x0c``
 - Caractère de passage en mode semi-graphique : ``0x0e``
 - Motifs
 
-## Structure de la trame pour un motif .[steps]
+## Structure de la trame pour un motif .[steps conversion]
 
 - Caractère de séparation : ``0x1b``
 - Couleur de Texte : ``0x40`` + la valeur de la couleur Minitel

@@ -8,6 +8,8 @@ custom_css: assets/custom.css
 un bot dans mon minitel ?
 </div>
 
+!minitel(assets/minitel/TNT.jpg)
+
 !include(slides/introduction.sdf)
 
 !include(slides/history.sdf)
