@@ -56,6 +56,8 @@ const char *password = "gouz.dev";
 AsyncWebServer server(80);
 ```
 
+!minitel(assets/minitel/arduino.png)
+
 ## Arduino - Setup 1 .[electronic]
 
 ```arduino
@@ -73,7 +75,7 @@ void setup()
   minitel.println(WiFi.localIP().toString());
 ```
 
-++MINITEL_IP++
+++HOST_IP++
 
 ## Arduino - Setup 2 .[electronic]
 
