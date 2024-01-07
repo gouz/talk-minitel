@@ -1,4 +1,4 @@
-export default async (req, axios, env) => {
+export default async (req, env) => {
   const url = new URL(req.url);
   if (url.pathname === "/public") {
     const text = await Bun.file(
