@@ -3,7 +3,7 @@ export default (data) => {
   [...newData.matchAll(/!minitel\((.*)\)/g)].forEach((match) => {
     newData = newData.replace(
       match[0],
-      `<img src="/plugins/minitel/minitel.svg" data-minitel="${match[1]}" class="minitel-img" />`
+      `<span data-minitel="${match[1]}"></span>`
     );
   });
   return newData;

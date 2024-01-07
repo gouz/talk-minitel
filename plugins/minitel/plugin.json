@@ -7,5 +7,6 @@
   ],
   "addStyles": ["./plugins/minitel/minitel.css"],
   "onSlideChange": "window.slidesk.checkSlide();",
-  "addRoutes": "./plugins/minitel/back.mjs"
+  "addRoutes": "./plugins/minitel/back.mjs",
+  "addWS": "./plugins/minitel/minitel.mjs"
 }

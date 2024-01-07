@@ -193,17 +193,59 @@
         false
       );
 
+      function sliceIntoChunks(arr, chunkSize) {
+        const res = [];
+        res.push([arr.shift(), arr.shift()]);
+        for (let i = 0; i < arr.length; i += chunkSize * 5) {
+          const chunk = arr.slice(i, i + chunkSize * 5);
+          res.push(chunk);
+        }
+        return res;
+      }
+
+      let trame = null;
+      let stackNum = null;
+
       img.addEventListener(
         "load",
         async () => {
-          await fetch(`${window.location.origin}/post`, {
-            method: "post",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `trame=${encodeURIComponent(CV.convert(CM.getPixels(img)))}`,
-          });
+          trame = CV.convert(CM.getPixels(img));
+          const call = await fetch(`${window.location.origin}/new`);
+          const response = await call.text();
+          stackNum = Number(response);
         },
         false
       );
+
+      const io = new WebSocket(`ws://${window.location.host}/ws`);
+
+      const sendMessage = (payload) => {
+        waitForSocketConnection(payload);
+      };
+
+      const waitForSocketConnection = (payload) => {
+        setTimeout(() => {
+          if (io?.readyState === 1) io.send(payload);
+          else waitForSocketConnection(payload);
+        }, 5);
+      };
+
+      io.onmessage = async (event) => {
+        const data = JSON.parse(event.data);
+        if (data.num === stackNum) {
+          const url = "http://__MINITEL__";
+          const chunks = sliceIntoChunks(trame, 20);
+          await fetch(`${url}/new`);
+          for (let i = 0; i < chunks.length; i++) {
+            await fetch(
+              `${url}/put?${new URLSearchParams({
+                trame: chunks[i].join(","),
+              }).toString()}`
+            );
+          }
+          await fetch(`${url}/end`);
+        }
+      };
     </script>
   </body>
 </html>

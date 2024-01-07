@@ -83,16 +83,21 @@ void setup()
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) { 
     request->send(200, "text/html", "<!doctype html><html lang=en>...</html>"); 
   });
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) { 
+    request->send(200, "text/html", "<!doctype html><html lang=en>...</script>"); 
+  });
+
   server.on("/new", HTTP_GET, [](AsyncWebServerRequest *request) {
     minitel.newScreen();
     request->send(200); 
   });
+
   server.on("/end", HTTP_GET, [](AsyncWebServerRequest *request) {
     minitel.noCursor();
     request->send(200); 
   });
-  server.on("/post", HTTP_POST, [](AsyncWebServerRequest *request) {}, 
-            handleUpload);
+
+  server.on("/post", HTTP_POST, action);
   DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", 
                                        "*");
   server.begin();
@@ -104,12 +109,14 @@ void setup()
 
 ```arduino
 void loop() {}
-void handleUpload(AsyncWebServerRequest *request, 
-                  String filename, size_t index, 
-                  uint8_t *data, size_t len, 
-                  bool final) {
-  for (size_t i = 0; i < len; i++) 
-    minitel.writeByte(data[i]);
+void action(AsyncWebServerRequest *request)
+{
+  AsyncWebParameter* p = request->getParam(0);
+  char *code = strtok( (char*) p->value().c_str(), ",");
+  while (code != NULL) {
+    minitel.writeByte(atoi(code));
+    code = strtok(NULL, ",");
+  }
   request->send(200);
 }
 ```
