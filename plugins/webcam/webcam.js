@@ -21,9 +21,13 @@ async function openCamera(cameraId, minWidth, minHeight) {
 const webcamize = async () => {
   const cameras = await getConnectedDevices("videoinput");
   if (cameras && cameras.length > 0) {
-    // Open first available video camera with a resolution of 1280x720 pixels
-    const stream = await openCamera(cameras[1].deviceId, 1280, 720);
-    video.srcObject = stream;
+    cameras.forEach((camera) => {
+      if (camera.label === "JOYACCESS JA-Webcam (0c45:89a0)") {
+        openCamera(camera.deviceId, 1280, 720).then(
+          (stream) => (video.srcObject = stream)
+        );
+      }
+    });
   }
 };
 
