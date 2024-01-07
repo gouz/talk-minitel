@@ -48,8 +48,6 @@ Giscard, informatiser la france
 Remplacement de l'annuaire 
 Avant c'était que dans les départements, impossible de trouver ailleurs
 Minitel gratuit si on était abonné aux PTT
-
-1 franc la minute, avec l'inflation : 0.34e la minute, environ 20e de l'heure
 */
 
 !minitel(assets/minitel/bretagne.jpeg)
@@ -59,6 +57,8 @@ Minitel gratuit si on était abonné aux PTT
 3615
 
 /*
+1 franc la minute, avec l'inflation : 0.34e la minute, environ 20e de l'heure
+
 DGT prenait 30 à 40% sur les communications
 
 la moitié des revenus vennait du minitel rose
@@ -77,8 +77,6 @@ Norme Antiope du service de télécommunications Vidéotex
 !image(assets/history/transpac.jpeg, transpac, 1000)
 
 /*
-
 En 1977 choix entre Transpac et Cyclades => Cyclades basé sur un réseau distribué comme Arpanet
 Transpac offrait un monopole sur le réseau à l'état qui lui permettait de tout controller
-
 */
