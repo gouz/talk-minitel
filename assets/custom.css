@@ -132,3 +132,18 @@ table ul li {
 .sd-slide.twitch {
   background-image: url(backgrounds/ella-don-s3cSol6Y6eY-unsplash.jpg);
 }
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+.blue {
+  color: blue;
+  font-weight: bold;
+}

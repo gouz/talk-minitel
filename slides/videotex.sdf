@@ -17,7 +17,7 @@ Le Minitel français est le terminal adapté à ce service.
 !image(assets/videotex/resolution.drawio.svg)
 
 /*
-La résolution du Minitel est de 24 rangées de 40 caractères.
+La résolution du Minitel est de 40 caractères sur 24 rangées.
 */
 
 ## Mode semi-graphique
@@ -29,6 +29,14 @@ Il est possible de passer en mode semi-graphique pour diviser chaque caractères
 Nous obtenons donc une résolution de 80px de large sur 72px de haut. 
 Le minitel est capable d’afficher 8 niveaux de gris, mais les rectangles de pixels ne peuvent avoir que 2 couleurs différentes, la couleur du "texte" et la couleur de fond.
 */
+
+## 
+
+!image(assets/videotex/BretagneVTX.gif)
+
+## 
+
+!image(assets/videotex/230516_Minitel.jpg)
 
 ## Nouvelle résolution .[sbs svgconvert]
 
@@ -82,7 +90,7 @@ En technique vidéo couleur, le signal de luminance ou luma, couramment nommé l
 
 <div class="formula">
 
-Y’ = 0,299 x R + 0,587 x G + 0,114 x B
+Y’ = 0,299 x <span class="red">R</span> + 0,587 x <span class="green">G</span> + 0,114 x <span class="blue">B</span>
 
 </div>
 
@@ -97,7 +105,7 @@ Pour construire la luma Y’, le Minitel utilise la recommandation UIT-R BT 601 
 
 <div class="formula">
 
-Y’ = 0,299 x 255 + 0,587 x 255 + 0,114 x 255
+Y’ = 0,299 x <span class="red">255</span> + 0,587 x <span class="green">255</span> + 0,114 x <span class="blue">255</span>
 
 Y' = 76,245 + 149,685 + 29,07
 
@@ -111,7 +119,7 @@ Y' = 255
 
 <div class="formula">
 
-Y’ = 0,299 x 0 + 0,587 x 0 + 0,114 x 255
+Y’ = 0,299 x <span class="red">0</span> + 0,587 x <span class="green">0</span> + 0,114 x <span class="blue">255</span>
 
 Y' = 0 + 0 + 29,07
 
@@ -175,6 +183,56 @@ Y' = 29,07
 /*
 Arbitrairement, pour calculer la couleur qui correspond à la luma déterminée précédemment, nous divisons la luma par 32 (32 x 8 = 256).
 */
+
+## Nouvelle table de conversion
+
+<table>
+<tr>
+<td></td>
+<td>Couleur</td>
+<td>Luma</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #000000; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Noir</td>
+<td align="right">0 - 31</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #0000FF; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Bleu</td>
+<td align="right">32 - 63</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #FF0000; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Rouge</td>
+<td align="right">64 - 95</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #FF00FF; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Magenta</td>
+<td align="right">96 - 127</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #00FF00; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Vert</td>
+<td align="right">128 - 159</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #00FFFF; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Cyan</td>
+<td align="right">160 - 191</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #FFFF00; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Jaune</td>
+<td align="right">192 - 223</td>
+</tr>
+<tr>
+<td><span style="width: 3vw; height: 3vw; background: #FFFFFF; display: inline-block; margin: 0 2vw;"></span></td>
+<td>Blanc</td>
+<td align="right">224 - 255</td>
+</tr>
+</table>
 
 ## Résumé .[conversion]
 

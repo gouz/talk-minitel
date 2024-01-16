@@ -12,22 +12,33 @@ un bot dans mon minitel ?
 
 /*
 Dans ce talk, des indices sont présents sur certaines slides, vous permettant d'interagir avec le minitel.
+
+REX sur projet, interaction avec communauté
 */
 
 !include(slides/introduction.sdf)
 
+//@ < 05:00
+
 !include(slides/history.sdf)
+
+//@ < 15:00
 
 !include(slides/videotex.sdf)
 
 !include(slides/conversion.sdf)
 
+//@ < 30:00
+
 !include(slides/electronic.sdf)
+
+//@ < 35:00
 
 !include(slides/twitch.sdf)
 
-!include(slides/conclusion.sdf)
+//@ < 40:00
 
+!include(slides/conclusion.sdf)
 
 ## Crédit .[no-center]
 
@@ -43,16 +54,15 @@ Backgrounds : Unsplash, ...
 
 ## Remerciements
 
-🐈‍⬛ Aurélie Vache
+📖 François Tonic & le magazine Programmez! (n°258)
 
 🐼 Thierry Chantier & 📶 Kongduino
 
 💾 Eric Sérandour
 
+🐈‍⬛ Aurélie Vache
+
 🎓 Bernard Marti
-
-📖 François Tonic & le magazine Programmez! (n°258)
-
 
 ## 🫶 .[activate-minitel]
 
