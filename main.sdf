@@ -77,7 +77,7 @@ des questions ?
 !image(assets/feedbacks.png)
 </td>
 <td>
-<center>C'est à vous !</center>
+<center>C'est à vous ! ++HOST_IP++</center>
 <video autoplay="true" id="webcam"></video>
 </td>
 </tr>
