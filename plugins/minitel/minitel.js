@@ -26,16 +26,10 @@ window.slidesk.checkSlide = () => {
       "activate-minitel"
     )
   ) {
-    window.slidesk.minitel_array = [];
-    setTimeout(async () => {
-      await fetch(`${url}/new`);
-      let num = 0;
-      setInterval(() => {
-        window.slidesk.sendMessage(
-          JSON.stringify({ key: "minitel_launch", num: num++ })
-        );
-      }, 30000);
-    }, 1000);
+    minitel_array = [];
+    setTimeout(() => {
+      call();
+    }, 500);
   }
 };
 
@@ -52,26 +46,43 @@ const prepareImage = (img) => {
   return arr;
 };
 
-const call = () => {
-  fetch(window.slidesk.minitel_array.shift()).then(() => {
-    if (window.slidesk.minitel_array.length) call();
-  });
-};
+let isCalling = false;
+let minitel_array = [];
 
-window.slidesk.minitel_array = [];
+const call = () => {
+  isCalling = true;
+  if (minitel_array.length)
+    fetch(minitel_array.shift()).then(() => {
+      if (minitel_array.length) call();
+      else isCalling = false;
+    });
+  else isCalling = false;
+};
 
 window.slidesk.Minitel = async (file) => {
   const img = document.createElement("img");
   img.addEventListener(
     "load",
     () => {
-      window.slidesk.minitel_array = [];
+      minitel_array = [];
       setTimeout(() => {
-        window.slidesk.minitel_array = prepareImage(img);
+        minitel_array = prepareImage(img);
         call();
       }, 500);
     },
     false
   );
   img.src = file;
+};
+
+window.slidesk.new_trame = (data) => {
+  minitel_array.push(
+    ...sliceIntoChunks(data.trame, 20).map(
+      (t) =>
+        `${url}/put?${new URLSearchParams({
+          trame: t.join(","),
+        }).toString()}`
+    )
+  );
+  if (!isCalling) call();
 };

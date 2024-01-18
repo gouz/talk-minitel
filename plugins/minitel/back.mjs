@@ -9,8 +9,6 @@ export default async (req, env) => {
         "Content-Type": "text/html",
       },
     });
-  } else if (url.pathname === "/new") {
-    return new Response(globalThis.minitelWaitingList++);
   }
   return null;
 };
