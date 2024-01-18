@@ -26,31 +26,50 @@ window.slidesk.checkSlide = () => {
       "activate-minitel"
     )
   ) {
-    let num = 0;
-    setInterval(() => {
-      window.slidesk.sendMessage(
-        JSON.stringify({ key: "minitel_launch", num: num++ })
-      );
-    }, 10000);
+    window.slidesk.minitel_array = [];
+    setTimeout(async () => {
+      await fetch(`${url}/new`);
+      let num = 0;
+      setInterval(() => {
+        window.slidesk.sendMessage(
+          JSON.stringify({ key: "minitel_launch", num: num++ })
+        );
+      }, 30000);
+    }, 1000);
   }
 };
+
+const prepareImage = (img) => {
+  const chunks = sliceIntoChunks(CV.convert(CM.getPixels(img)), 20);
+  const arr = [`${url}/new`];
+  for (let i = 0; i < chunks.length; i++)
+    arr.push(
+      `${url}/put?${new URLSearchParams({
+        trame: chunks[i].join(","),
+      }).toString()}`
+    );
+  arr.push(`${url}/end`);
+  return arr;
+};
+
+const call = () => {
+  fetch(window.slidesk.minitel_array.shift()).then(() => {
+    if (window.slidesk.minitel_array.length) call();
+  });
+};
+
+window.slidesk.minitel_array = [];
 
 window.slidesk.Minitel = async (file) => {
   const img = document.createElement("img");
   img.addEventListener(
     "load",
-    async () => {
-      const chunks = sliceIntoChunks(CV.convert(CM.getPixels(img)), 20);
-      await fetch(`${url}/new`);
-      for (let i = 0; i < chunks.length; i++) {
-        const body = new FormData();
-        body.append("trame", chunks[i].join(","));
-        await fetch(`${url}/post`, {
-          method: "post",
-          body,
-        });
-      }
-      await fetch(`${url}/end`);
+    () => {
+      window.slidesk.minitel_array = [];
+      setTimeout(() => {
+        window.slidesk.minitel_array = prepareImage(img);
+        call();
+      }, 500);
     },
     false
   );

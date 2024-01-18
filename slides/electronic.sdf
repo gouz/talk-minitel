@@ -75,7 +75,7 @@ void setup()
   minitel.println(WiFi.localIP().toString());
 ```
 
-++HOST_IP++
+<span class="treasure">++HOST_IP++</span>
 
 ## Arduino - Setup 2 .[electronic]
 

@@ -147,3 +147,8 @@ table ul li {
   color: blue;
   font-weight: bold;
 }
+
+.treasure {
+  font-weight: bold;
+  font-size: 5vw;
+}
