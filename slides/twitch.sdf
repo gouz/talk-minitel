@@ -66,3 +66,24 @@ const treatMessage = ({ message, tags }) => {
   }
 };
 ```
+
+## Gestion des images via StableDiffusion
+
+```js
+axios
+  .post(`${process.env.STABLE_DIFFUSION_URL}/sdapi/v1/txt2img`, {
+    width: 512,
+    height: 512,
+    steps: 10,
+    prompt: `${prompt}, black and white`,
+    negative_prompt: "nsfw",
+    cfg_scale: 7,
+  })
+  .then(async (response) => {
+    if (response.data.images.length) {
+      const img = new Image();
+      img.src = `data:image/png;base64, ${response.data.images[0]}`;
+      treatImage(img);
+    }
+  });
+```
