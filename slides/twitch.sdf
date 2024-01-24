@@ -67,7 +67,7 @@ const treatMessage = ({ message, tags }) => {
 };
 ```
 
-## Gestion des images via StableDiffusion
+## StableDiffusion
 
 <pre>
 <code class="language-js">axios
