@@ -69,8 +69,8 @@ const treatMessage = ({ message, tags }) => {
 
 ## Gestion des images via StableDiffusion
 
-```js
-axios
+<pre>
+<code class="language-js">axios
   .post(`${process.env.STABLE_DIFFUSION_URL}/sdapi/v1/txt2img`, {
     width: 512,
     height: 512,
@@ -86,4 +86,5 @@ axios
       treatImage(img);
     }
   });
-```
+</code>
+</pre>
