@@ -66,18 +66,23 @@ Backgrounds : Unsplash, ...
 
 🎓 Bernard Marti
 
-## 🫶 .[activate-minitel]
-
-<table>
-<tr>
-<td>
+## 🫶
 
 des questions ?
 
 !image(assets/feedbacks.png)
+
+
+## C'est à vous .[activate-minitel]
+
+C'est à vous ! <span class="treasure">++HOST_IP++</span>
+
+<table>
+<tr>
+<td>
+<div id="sd-qrcode" data-url="++HOST_IP++"></div>
 </td>
 <td>
-<center>C'est à vous ! <span class="treasure">++HOST_IP++</span></center>
 <video autoplay="true" id="webcam"></video>
 </td>
 </tr>
