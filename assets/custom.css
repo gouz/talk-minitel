@@ -151,3 +151,21 @@ table ul li {
 .treasure {
   font-weight: bold;
 }
+
+.smalltitle h2 {
+  font-size: 3vw;
+  position: absolute;
+  top: 2vh;
+}
+
+/**** LIGHT THEME ****/
+:root {
+  --sd-background-color: #242424;
+  --sd-heading-color: rgba(25, 25, 25, 0.97);
+  --sd-text-color: rgba(25, 25, 25, 0.87);
+  --sd-primary-color: #005c79;
+}
+
+.sd-slide::after {
+  background-color: rgba(230, 230, 230, 0.85);
+}

@@ -10,11 +10,9 @@ Merci @aurelievache
 
 !image(assets/conversion/rillettes_80.png, rillettes, 80)
 
-## Traitement par bloc de 2x3 .[conversion]
+## Traitement par bloc de 2x3 .[sbs conversion svgconvert smalltitle]
 
-## .[sbs conversion svgconvert]
-
-!image(assets/conversion/part.drawio.svg)
+!image(assets/conversion/part.drawio.svg, parts,, 400)
 
 /*
 Les couleurs Minitel sont les suivantes :
