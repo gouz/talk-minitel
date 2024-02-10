@@ -1,0 +1,171 @@
+:root {
+  --sd-heading1-size: 8.5vw;
+  --sd-heading1-line-height: 1;
+  --sd-heading2-size: 5vw;
+  --sd-heading2-line-height: 1;
+  --sd-text-size: 2.9vw;
+  --sd-text-line-height: 1.2;
+
+  --sd-background-color: #242424;
+  --sd-heading-color: rgba(255, 255, 255, 0.97);
+  --sd-text-color: rgba(255, 255, 255, 0.87);
+  --sd-primary-color: rgb(37, 186, 146);
+
+  /* SpeakerView */
+  --sd-sv-timer-size: 80px;
+  --sd-sv-text-size: 40px;
+  --sd-sv-text-line-height: 1.2;
+  --sd-sv-background-color: #242424;
+  --sd-sv-text-color: rgba(255, 255, 255, 0.87);
+}
+
+@font-face {
+  font-family: "Minitel";
+  src: url("fonts/Minitel.ttf");
+}
+
+@font-face {
+  font-family: "Handlee";
+  src: url(fonts/Handlee/Handlee-Regular.ttf);
+}
+
+h1,
+H2 {
+  font-family: "Minitel";
+  line-height: 1.3;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.minitel {
+  font-family: "Minitel";
+}
+
+.sd-slide {
+  background-image: url(backgrounds/annuaire.jpg);
+  background-size: cover;
+}
+
+.sd-slide::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(18, 18, 14, 0.85);
+  content: "";
+  z-index: -1;
+}
+
+.bigger {
+  font-size: 7vw;
+}
+
+.full-sized {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.a-quoi-ca-sert li {
+  list-style: none;
+}
+
+.small {
+  font-size: 1vw;
+}
+
+.small p {
+  margin: 0 auto;
+}
+
+.formula {
+  background-color: white;
+  color: black;
+  padding: 30px 50px;
+  font-size: 4.5vw;
+  font-family: "Handlee";
+}
+
+table ul li {
+  list-style: none;
+}
+
+.sd-img svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hljs {
+  font-size: 2vw;
+}
+
+#sd-progress .sd-progression {
+  border: none;
+}
+
+.no-center {
+  display: block;
+}
+
+.no-center h2 {
+  margin-bottom: 50px;
+}
+
+.no-center p {
+  text-align: left;
+}
+
+.sd-slide.conversion {
+  background-image: url(backgrounds/thomas-t-OPpCbAAKWv8-unsplash.jpg);
+}
+
+.sd-slide.electronic {
+  background-image: url(electronic/NodeMCU_DEVKIT_1.0.jpg);
+}
+
+.sd-slide.twitch {
+  background-image: url(backgrounds/ella-don-s3cSol6Y6eY-unsplash.jpg);
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+  font-weight: bold;
+}
+
+.blue {
+  color: blue;
+  font-weight: bold;
+}
+
+.treasure {
+  font-weight: bold;
+}
+
+.smalltitle h2 {
+  font-size: 3vw;
+  position: absolute;
+  top: 2vh;
+}
+
+/**** LIGHT THEME ****/
+:root {
+  --sd-background-color: #242424;
+  --sd-heading-color: rgba(25, 25, 25, 0.97);
+  --sd-text-color: rgba(25, 25, 25, 0.87);
+  --sd-primary-color: #005c79;
+}
+
+.sd-slide::after {
+  background-color: rgba(230, 230, 230, 0.85);
+}

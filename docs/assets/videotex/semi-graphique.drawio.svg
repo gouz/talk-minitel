@@ -1,0 +1,60 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1071px" height="351px" viewBox="-0.5 -0.5 1071 351" content="&lt;mxfile&gt;&lt;diagram id=&quot;ijZzYGc0a3gDNkMlCpCx&quot; name=&quot;Page-1&quot;&gt;7Vxdj6IwFP01vm74Lr7qzuw+7L7MbLLPHanSpFJS6qrz67dAEb8YiwJqwZjYXkop59xebk8qI3u63PxgMA5/0wCRkWUEm5H9fWRZpuVZ4ie1bKXFAyC3LBgOpK00vONPJI2GtK5wgJKDhpxSwnF8aJzRKEIzfmCDjNH1YbM5JYdXjeECnRjeZ5CcWv/igIfFbRhGeeAnwotQXnpcHFjCorE0JCEM6HrPZL+M7CmjlOel5WaKSIpegUt+3mvF0d3AGIq4ygm2l5/xD5KVvDk5ML4t7laMMU6LHH6kpknIl0RUTVFch5ij9xjO0uNrwbawJRwyLjkzRF2QwCGOEJPnzCghME5w1lneIsQk+AW3dMWLyxS1yRwTMqWEsmwstpF9hF0OGzGONpX3bu4QFb6I6BJxthVN5Amu4+anSDe0gKyvS04tRxIV7tFpu9IIpR8tdn2XUIuCRLsCefA10G+pW0xCyvBnCiCRWB2jm6zxksBIuBsMjkwTmk2w1MRpLEsEzbksflDO6VJWmLw94yxDAaPxH8gWqGiyT0tEo9QtYoojngHiTsRXQDQ1vrkjV9zZVNTNsi6+aXPGpzRKOBPOkXaLYMLXKOGq5Oaue8ruJfZM02+APb+SPTFGjiF5E4EHRguVGSPDFCzxPgNvPQqpAG9OssgS4iBAkTKq4CKqplUXVdldCckV/UHCEYsgF269ioLkhKzdWNX4G/eMv80R1prxWUx05efYEF6vDK/bIz4vh1vn9nDrmOr0Pvf8dYzzsF+eX1/AfNV8Peqv4flq9Z3Q+gH5uQi2h4DcaUC2bEs1IDeQ/zpOb+av3YuEuFgL95dQ3TNkBaXnHHV7zMIkztW0Od6g4FScec0+7YgzrnEqzpyH0WpAnHFAzaeXRrKY5d1TFnOqhZUhTVAKb5cFnBbTAl1lldwttc8CihncG/40f+i7NXSTIbzeEl7vIou5vVFR3IqcRTPVxK2hmuhJqOaymFtDNxkCcgMBuVtZzO2NipI7sv4JcY39MXoSqnuGrKD0PJAs5h2JM/ZYlZYmZDHXr/n00kgW8617ymJutbAypAlK4e2ygNNeWuDpKqvkbql9FuCZPeNP84d+sQF9WIW1HV7vIot5vVFRckfWXhbzerPbpIpQzWUxr4ZuMgTkBgJyt7KY1xsVJXdk/RPiGvtj9CRU9wxZQel5IFls7NxTFvPGTwWWipLVHlhA4Z86DwTWsWd1DFbd/RtdC64NIGwa43sqq2DING/LNMHlrRntZZbA1jTvAFev7J8qzwBOz/jTPG8Ew0K+o/B6F2UV9GYhD65eyD+V8AZ6s5CvIlRzZRXU3bIxBOTbAnK3yipQkB40mb/9+AeOX+NFJnoSqnmG7CtIOg+kf5mWeU9p1bdaR2uafTrUslpES2HjwyP7VsdoKewqeGTfssedoqWwsn9ktLp9gYDf/tsWGkXreCa2ipaolm84zR+h5Yti7Zf/&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="280" y="0" width="240" height="350" fill="#000000" stroke="none" pointer-events="none"/>
+        <path d="M 280 0 L 520 0 L 520 350 L 280 350 L 280 0" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 280 118 L 400 118 L 520 118" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 280 232 L 400 232 L 520 232" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 400 0 L 400 118 L 400 232 L 400 350" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 280 0 M 400 0 M 400 118 M 280 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 400 0 M 520 0 M 520 118 M 400 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 280 118 M 400 118 M 400 232 M 280 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 400 118 M 520 118 M 520 232 M 400 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 280 232 M 400 232 M 400 350 M 280 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 400 232 M 520 232 M 520 350 M 400 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="280" y="230" width="120" height="120" fill="#ffffff" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="0" y="0" width="240" height="350" fill="#000000" stroke="none" pointer-events="none"/>
+        <path d="M 0 0 L 240 0 L 240 350 L 0 350 L 0 0" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 118 L 120 118 L 240 118" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 232 L 120 232 L 240 232" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 120 0 L 120 118 L 120 232 L 120 350" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 0 M 120 0 M 120 118 M 0 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 120 0 M 240 0 M 240 118 M 120 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 118 M 120 118 M 120 232 M 0 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 120 118 M 240 118 M 240 232 M 120 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 232 M 120 232 M 120 350 M 0 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 120 232 M 240 232 M 240 350 M 120 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="400" y="115" width="120" height="120" fill="#ffffff" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="560" y="0" width="240" height="350" fill="#000000" stroke="none" pointer-events="none"/>
+        <path d="M 560 0 L 800 0 L 800 350 L 560 350 L 560 0" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 560 118 L 680 118 L 800 118" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 560 232 L 680 232 L 800 232" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 680 0 L 680 118 L 680 232 L 680 350" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 560 0 M 680 0 M 680 118 M 560 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 680 0 M 800 0 M 800 118 M 680 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 560 118 M 680 118 M 680 232 M 560 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 680 118 M 800 118 M 800 232 M 680 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 560 232 M 680 232 M 680 350 M 560 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 680 232 M 800 232 M 800 350 M 680 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="680" y="115" width="120" height="120" fill="#ffffff" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="560" y="0" width="120" height="120" fill="#ffffff" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="680" y="0" width="120" height="120" fill="#ffffff" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="830" y="0" width="240" height="350" fill="rgb(255, 255, 255)" stroke="none" pointer-events="none"/>
+        <path d="M 830 0 L 1070 0 L 1070 350 L 830 350 L 830 0" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 830 118 L 950 118 L 1070 118" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 830 232 L 950 232 L 1070 232" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 950 0 L 950 118 L 950 232 L 950 350" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 830 0 M 950 0 M 950 118 M 830 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 950 0 M 1070 0 M 1070 118 M 950 118" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 830 118 M 950 118 M 950 232 M 830 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 950 118 M 1070 118 M 1070 232 M 950 232" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 830 232 M 950 232 M 950 350 M 830 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 950 232 M 1070 232 M 1070 350 M 950 350" fill="none" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="950" y="115" width="120" height="120" fill="#ffffff" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="830" y="0" width="120" height="120" fill="#cccccc" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="950" y="0" width="120" height="120" fill="#ffffff" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="830" y="120" width="120" height="120" fill="#cccccc" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="830" y="230" width="120" height="120" fill="#cccccc" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+        <rect x="950" y="230" width="120" height="120" fill="#cccccc" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+    </g>
+</svg>
