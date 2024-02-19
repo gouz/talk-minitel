@@ -76,13 +76,12 @@ window.slidesk.Minitel = async (file) => {
 };
 
 window.slidesk.new_trame = (data) => {
-  minitel_array.push(
-    ...sliceIntoChunks(data.trame, 20).map(
-      (t) =>
-        `${url}/put?${new URLSearchParams({
-          trame: t.join(","),
-        }).toString()}`
-    )
+  const arr = sliceIntoChunks(data.trame, 20).map(
+    (t) =>
+      `${url}/put?${new URLSearchParams({
+        trame: t.join(","),
+      }).toString()}`
   );
+  minitel_array.push(...arr);
   if (!isCalling) call();
 };
