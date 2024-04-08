@@ -1,14 +1,14 @@
 ## Conversion d'image .[conversion]
 
-!image(assets/conversion/rillettes.png, rillettes, 800)
+!image(assets/conversion/sunny.jpg, sunny, 800)
 
 Merci @aurelievache
 
-!minitel(assets/conversion/rillettes.png)
+!minitel(assets/conversion/sunny.jpg)
 
 ## Redimensionnement 80x72 .[conversion]
 
-!image(assets/conversion/rillettes_80.png, rillettes, 80)
+!image(assets/conversion/sunny_80.png, sunny, 80)
 
 ## Traitement par bloc de 2x3 .[sbs conversion svgconvert smalltitle]
 
