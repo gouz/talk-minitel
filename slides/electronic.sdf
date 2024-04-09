@@ -35,6 +35,10 @@ NodeMCU ESP8266
 Mettre une résistance entre la broche TX de l’ESP8266 et RX du Minitel permet de filtrer le signal pour obtenir une meilleure transmission. Même principe côté RX de l’ESP8266 avec une résistance “Pullup” pour nettoyer les ondes électromagnétiques qui sont générées par le Minitel.
 */
 
+## Version "prod"
+
+!image(assets/electronic/ori-module-wifi-esp-01-25664.jpg, ESP01-s)
+
 ## Bibliothèques .[electronic]
 
 https://github.com/eserandour/Minitel1B_Soft
