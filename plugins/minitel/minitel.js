@@ -1,4 +1,6 @@
-const url = `http://${window.slidesk.env.MINITEL_IP}`;
+const urls = window.slidesk.env.MINITEL_IPS.split(",").map(
+  (m) => `http://${m.trim()}`
+);
 
 function sliceIntoChunks(arr, chunkSize) {
   const res = [];
@@ -35,28 +37,36 @@ window.slidesk.checkSlide = () => {
 
 const prepareImage = (img) => {
   const chunks = sliceIntoChunks(CV.convert(CM.getPixels(img)), 20);
-  const arr = [`${url}/new`];
+  const arr = ["/new"];
   for (let i = 0; i < chunks.length; i++)
     arr.push(
-      `${url}/put?${new URLSearchParams({
+      `/put?${new URLSearchParams({
         trame: chunks[i].join(","),
       }).toString()}`
     );
-  arr.push(`${url}/end`);
+  arr.push("/end");
   return arr;
 };
 
 let isCalling = false;
 let minitel_array = [];
 
-const call = () => {
+const call = async () => {
   isCalling = true;
-  if (minitel_array.length)
-    fetch(minitel_array.shift()).then(() => {
-      if (minitel_array.length) call();
-      else isCalling = false;
+  if (minitel_array.length) {
+    const endpoint = minitel_array.shift();
+    const promises = [];
+    urls.forEach((url) => {
+      promises.push(
+        new Promise((resolve) =>
+          fetch(`${url}${endpoint}`).then(() => resolve())
+        )
+      );
     });
-  else isCalling = false;
+    await Promise.all(promises);
+    if (minitel_array.length) await call();
+    else isCalling = false;
+  } else isCalling = false;
 };
 
 window.slidesk.Minitel = async (file) => {
@@ -65,9 +75,9 @@ window.slidesk.Minitel = async (file) => {
     "load",
     () => {
       minitel_array = [];
-      setTimeout(() => {
+      setTimeout(async () => {
         minitel_array = prepareImage(img);
-        call();
+        await call();
       }, 500);
     },
     false
@@ -75,13 +85,13 @@ window.slidesk.Minitel = async (file) => {
   img.src = file;
 };
 
-window.slidesk.new_trame = (data) => {
+window.slidesk.new_trame = async (data) => {
   const arr = sliceIntoChunks(data.trame, 20).map(
     (t) =>
-      `${url}/put?${new URLSearchParams({
+      `/put?${new URLSearchParams({
         trame: t.join(","),
       }).toString()}`
   );
-  minitel_array.push(...arr);
-  if (!isCalling) call();
+  minitel_array.push("/new", ...arr, "/end");
+  if (!isCalling) await call();
 };

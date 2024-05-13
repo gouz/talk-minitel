@@ -42,7 +42,7 @@ Pile d'image, prompt ...
 
 !include(slides/conclusion.sdf)
 
-## Crédit .[no-center]
+## Crédits .[no-center]
 
 SliDesk: https://github.com/slidesk/slidesk
 
@@ -70,7 +70,7 @@ Backgrounds : Unsplash, ...
 
 des questions ?
 
-!image(assets/feedbacks.png)
+// !image(assets/feedbacks.png)
 
 
 ## C'est à vous .[activate-minitel]
@@ -78,12 +78,12 @@ des questions ?
 <span class="treasure">++HOST_IP++</span>
 
 <table>
-<tr>
-<td>
-<div id="sd-qrcode" data-url="++HOST_IP++"></div>
-</td>
-<td>
-<video autoplay="true" id="webcam"></video>
-</td>
-</tr>
+    <tr>
+        <td>
+            <div id="sd-qrcode" data-url="++HOST_IP++"></div>
+        </td>
+        <td>
+            <video autoplay="true" id="webcam"></video>
+        </td>
+    </tr>
 </table>
