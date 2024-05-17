@@ -8,7 +8,7 @@ custom_css: assets/custom.css
 un bot dans mon minitel ?
 </div>
 
-!minitel(assets/minitel/wev.png)
+!minitel(assets/minitel/zenika.png)
 
 /*
 Dans ce talk, des indices sont présents sur certaines slides, vous permettant d'interagir avec le minitel.
