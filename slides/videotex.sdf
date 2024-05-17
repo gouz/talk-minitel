@@ -2,6 +2,8 @@
 
 !image(assets/videotex/transpac.drawio.svg, transpac, 900)
 
+!minitel(assets/backgrounds/annuaire.jpg)
+
 /*
 Le Vidéotex est un service de télécommunications permettant l'envoi de pages composées de textes et de graphismes simples à un utilisateur en réponse à une requête de ce dernier (interactivité)
 Ces pages sont destinées à être visualisées sur un écran cathodique, par exemple sur une télévision ou tout autre écran au format de la télévision.
@@ -48,9 +50,9 @@ Le minitel est capable d’afficher 8 niveaux de gris, mais les rectangles de pi
 
 <div class="small">
 
-__Bernard MARTI — Travail personnel__
+_Bernard MARTI — Travail personnel_
 
-__Extrait d'un cours donné à l'Université de Paris Dauphine sur l'histoire du Vidéotex : code mosaïque__
+_Extrait d'un cours donné à l'Université de Paris Dauphine sur l'histoire du Vidéotex : code mosaïque_
 
 </div>
 
