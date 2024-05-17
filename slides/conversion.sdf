@@ -36,46 +36,6 @@ Blanc
 
 !image(assets/conversion/convert.png,, 800)
 
-## Luma .[conversion]
-
-```js
-const luma = (rgb) =>
-  Math.round(
-    (  parseInt(rgb[0]) * 299 
-     + parseInt(rgb[1]) * 587 
-     + parseInt(rgb[2]) * 114
-    ) / 1000
-  );
-```
-## Texte ou Surlignage .[conversion]
-
-```js
-const state = (x, y, colors, pixels) => {
-  const color = luma(pixels[x + y * 80]);
-  const minLuma = Math.abs(colors[0] - color);
-  const maxLuma = Math.abs(colors[1] - color);
-  return minLuma > maxLuma ? 0 : 1;
-};
-```
-
-## Motif .[conversion]
-
-```js
-const motif = (x, y, colors, pixels) => {
-  const xPix = x * 2;
-  const yPix = y * 3;
-  let car = 0;
-  car += Math.pow(2, 0) * state(xPix + 0, yPix + 0, colors, pixels);
-  car += Math.pow(2, 1) * state(xPix + 1, yPix + 0, colors, pixels);
-  car += Math.pow(2, 2) * state(xPix + 0, yPix + 1, colors, pixels);
-  car += Math.pow(2, 3) * state(xPix + 1, yPix + 1, colors, pixels);
-  car += Math.pow(2, 4) * state(xPix + 0, yPix + 2, colors, pixels);
-  car += Math.pow(2, 5) * 1;
-  car += Math.pow(2, 6) * state(xPix + 1, yPix + 2, colors, pixels);
-  return car;
-};
-```
-
 ## Structure de la trame pour l'envoi .[steps conversion]
 
 - Caractère d’effacement de l’écran : ``0x0c``
