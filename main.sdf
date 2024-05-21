@@ -75,7 +75,7 @@ des questions ?
 
 ## C'est à vous .[activate-minitel]
 
-<span class="treasure">++HOST_IP++</span>
+<span class="treasure"><a href="++HOST_IP++">++HOST_IP++</a></span>
 
 <table>
     <tr>
