@@ -1,14 +1,12 @@
 ## Conversion d'image .[conversion]
 
-!image(assets/conversion/sunny.jpg, sunny, 800)
+!image(assets/conversion/devquest.png, devquest, 800)
 
-Merci @aurelievache
-
-!minitel(assets/conversion/sunny.jpg)
+!minitel(assets/conversion/devquest.jpg)
 
 ## Redimensionnement 80x72 .[conversion]
 
-!image(assets/conversion/sunny_80.png, sunny, 80)
+!image(assets/conversion/devquest_80.png, devquest, 80)
 
 ## Traitement par bloc de 2x3 .[sbs conversion svgconvert smalltitle]
 
@@ -28,13 +26,13 @@ Blanc
 
 ## Résultat .[conversion]
 
-!image(assets/conversion/convert.png,, 80)
+!image(assets/conversion/devquest_convert_80.png,, 80)
 
-!minitel(assets/conversion/sunny.png)
+!minitel(assets/conversion/devquest_convert_80.png)
 
 ## Résultat .[conversion]
 
-!image(assets/conversion/convert.png,, 800)
+!image(assets/conversion/devquest_convert_800.png,, 800)
 
 ## Luma .[conversion]
 
