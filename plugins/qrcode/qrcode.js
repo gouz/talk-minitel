@@ -1,10 +1,10 @@
 window.slidesk.qrcode = () => {
-  document.getElementById("sd-qrcode").innerHTML = window.QRCodeRender(
-    window.QRCodeGetMatrix(
-      document.getElementById("sd-qrcode").getAttribute("data-url")
-    ),
-    "#000"
-  );
+  document.querySelectorAll(".sd-qrcode").forEach((el) => {
+    el.innerHTML = window.QRCodeRender(
+      window.QRCodeGetMatrix(el.dataset.url),
+      "#000"
+    );
+  });
 };
 
 window.slidesk.qrcode();
