@@ -8,7 +8,7 @@ custom_css: assets/custom.css
 un bot dans mon minitel ?
 </div>
 
-!minitel(assets/minitel/devquest.png)
+!minitel(assets/minitel/sunny.png)
 
 /*
 Dans ce talk, des indices sont présents sur certaines slides, vous permettant d'interagir avec le minitel.
@@ -60,6 +60,8 @@ Backgrounds : Unsplash, ...
 
 🐼 Thierry Chantier & 📶 Kongduino
 
+🐈‍⬛ Aurélie Vache
+
 💾 Eric Sérandour
 
 🎓 Bernard Marti
@@ -68,7 +70,7 @@ Backgrounds : Unsplash, ...
 
 des questions ?
 
-<div class="sd-qrcode" data-url="https://openfeedback.io/YUkT8ETZnqhBSbABGUtS/2024-06-14/sxuXYZ9LFxNrSVqKAGTu"></div>
+<div class="sd-qrcode" data-url="https://openfeedback.io/sunnytech2024/2024-07-04/3615-twitch-un-bot-sur-minitel"></div>
 
 
 ## C'est à vous .[activate-minitel fullcam]

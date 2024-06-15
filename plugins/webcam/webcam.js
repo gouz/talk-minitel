@@ -28,15 +28,6 @@ const webcamize = async () => {
           (stream) => (video.srcObject = stream)
         );
       }
-      console.log(camera, window.slidesk.env.WEBCAM2);
-      if (camera.label.includes(window.slidesk.env.WEBCAM2)) {
-        console.log("camera found");
-        openCamera(camera.deviceId, 1280, 720).then(
-          (stream) => {
-            document.querySelector("#webcam2").srcObject = stream;
-          }
-        );
-      }
     });
   }
 };
