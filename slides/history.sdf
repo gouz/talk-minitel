@@ -20,6 +20,11 @@
 /*
 Début 80s => 30 juin 2012
 
+Giscard, informatiser la france
+
+Remplacement de l'annuaire 
+Avant c'était que dans les départements, impossible de trouver ailleurs
+
 ce qui est somme toute assez tard au vu de l’arrivée d’internet dans le milieu des années 90. 
 */
 
@@ -47,7 +52,7 @@ qui a fait la fortune du créateur d’un des fournisseurs d’accès à Interne
 
 ## 
 
-<img class="reload full-sized" src="./assets/history/francais.jpg" />
+!image(assets/history/francais.jpg, francais, 1400)
 
 ## Déploiement
 
@@ -58,10 +63,6 @@ qui a fait la fortune du créateur d’un des fournisseurs d’accès à Interne
 4 juin 1982 : lancement officiel
 
 /*
-Giscard, informatiser la france
-
-Remplacement de l'annuaire 
-Avant c'était que dans les départements, impossible de trouver ailleurs
 Minitel gratuit si on était abonné aux PTT
 */
 

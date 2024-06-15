@@ -67,7 +67,36 @@ const treatMessage = ({ message, tags }) => {
 };
 ```
 
-## StableDiffusion
+## 
+
+!image(assets/twitch/stablediffusion.webp)
+
+## Stable Diffusion
+
+CreativeML Open RAIL M License
+
+/*
+
+Open Source, mais pas un logiciel libre car utilisation contrainte dans certains cas d'utilisation
+
+*/
+
+SDXL 1.0 (1024x1024) en juillet 2023
+
+## Paramétrages
+
+- Steps
+- Classifier-Free Guidance (CFG) scale
+- Négatif Prompt
+- Prompt
+
+/*
+
+CFG : plus c'est gros (1 à 20) plus c'est réaliste
+
+*/
+
+## Api JS
 
 <pre>
 <code class="language-js">axios

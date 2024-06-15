@@ -1,10 +1,20 @@
+#webcam2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 256px;
+  height: 144px;
+}
+
 #webcam {
   width: 1280px;
   height: 720px;
 }
 
+
+
 @media print {
-  #webcam {
+  #webcam, #webcam2 {
     display: none;
   }
 }

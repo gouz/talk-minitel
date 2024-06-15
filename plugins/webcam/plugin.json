@@ -1,4 +1,5 @@
 {
   "addStyles": ["./plugins/webcam/webcam.css"],
-  "addScripts": ["./plugins/webcam/webcam.js"]
+  "addScripts": ["./plugins/webcam/webcam.js"],
+  "addHTML": "<video autoplay=\"true\" id=\"webcam2\"></video>"
 }
