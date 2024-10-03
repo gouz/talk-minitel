@@ -8,7 +8,7 @@ custom_css: assets/custom.css
 un bot dans mon minitel ?
 </div>
 
-!minitel(assets/minitel/sunny.png)
+!minitel(assets/minitel/clermontech.png)
 
 /*
 Dans ce talk, des indices sont présents sur certaines slides, vous permettant d'interagir avec le minitel.
@@ -69,21 +69,3 @@ Backgrounds : Unsplash, ...
 ## 🫶
 
 des questions ?
-
-<div class="sd-qrcode" data-url="https://openfeedback.io/sunnytech2024/2024-07-04/3615-twitch-un-bot-sur-minitel"></div>
-
-
-## C'est à vous .[activate-minitel fullcam]
-
-<span class="treasure"><a href="++HOST_IP++">++HOST_IP++</a></span>
-
-<table>
-    <tr>
-        <td>
-            <div class="sd-qrcode" data-url="++HOST_IP++"></div>
-        </td>
-        <td>
-            <video autoplay="true" id="webcam"></video>
-        </td>
-    </tr>
-</table>
