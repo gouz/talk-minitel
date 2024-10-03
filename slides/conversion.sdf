@@ -1,12 +1,12 @@
 ## Conversion d'image .[conversion]
 
-!image(assets/conversion/sunny.jpg, sunny, 800)
+!image(assets/conversion/volcan.png, sunny, 800)
 
-!minitel(assets/conversion/sunny.jpg)
+!minitel(assets/conversion/volcan.png)
 
 ## Redimensionnement 80x72 .[conversion]
 
-!image(assets/conversion/sunny_80.png, sunny, 80)
+!image(assets/conversion/volcan_80.png, sunny, 80)
 
 ## Traitement par bloc de 2x3 .[sbs conversion svgconvert smalltitle]
 
@@ -26,13 +26,13 @@ Blanc
 
 ## Résultat .[conversion]
 
-!image(assets/conversion/sunny_convert_80.png,, 80)
+!image(assets/conversion/conv_volcan_80.png,, 80)
 
-!minitel(assets/conversion/sunny_convert_80.png)
+!minitel(assets/conversion/volcankk.png)
 
 ## Résultat .[conversion]
 
-!image(assets/conversion/sunny_convert_800.png,, 800)
+!image(assets/conversion/conv_volcan_800.png,, 800)
 
 ## Luma .[conversion]
 
