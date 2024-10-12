@@ -20,12 +20,12 @@ async function openCamera(cameraId, minWidth, minHeight) {
 const webcamize = async () => {
   const cameras = await getConnectedDevices("videoinput");
   if (cameras && cameras.length > 0) {
-    cameras.forEach((camera) => {
+    cameras.forEach((camera, _) => {
       console.log(camera, window.slidesk.env.WEBCAM);
       if (camera.label.includes(window.slidesk.env.WEBCAM)) {
         console.log("camera found");
         openCamera(camera.deviceId, 1280, 720).then(
-          (stream) => (video.srcObject = stream)
+          (stream) => { video.srcObject = stream }
         );
       }
     });
